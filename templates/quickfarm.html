@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmer's Assistant</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+      .container {
+        max-width: 600px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin: 10px 0 5px;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Farmer's Assistant Form</h2>
+      <form action="{{url_for('compute_plan')}}" method="post" id="farmingForm">
+        <label for="landMeasurements">Land Measurements (in acres):</label>
+        <input
+          type="text"
+          id="landMeasurements"
+          name="landMeasurements"
+          required
+        />
+
+        <label for="budget">Budget:</label>
+        <input
+          type="text"
+          id="budget"
+          name="budget"
+          pattern="\d*"
+          title="Please enter a valid number"
+          required
+        />
+
+        <label for="machinery">Machinery:</label>
+        <input type="text" id="machinery" name="machinery" required />
+
+        <label for="labours">Number of Labors:</label>
+        <input
+          type="text"
+          id="labours"
+          name="labours"
+          pattern="\d*"
+          title="Please enter a valid number"
+          required
+        />
+
+        <label for="soilType">Soil Type:</label>
+        <input type="text" id="soilType" name="soilType" required />
+
+        <label for="irrigationMethod">Irrigation Method:</label>
+        <select id="irrigationMethod" name="irrigationMethod" required>
+          <option value="">Select an option</option>
+          <option value="drip">Drip Irrigation</option>
+          <option value="sprinkler">Sprinkler Irrigation</option>
+          <option value="surface">Surface Irrigation</option>
+          <option value="manual">Manual Watering</option>
+        </select>
+
+        <label for="storageFacilities">Storage Facilities:</label>
+        <textarea
+          id="storageFacilities"
+          name="storageFacilities"
+          rows="4"
+          required
+        ></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>

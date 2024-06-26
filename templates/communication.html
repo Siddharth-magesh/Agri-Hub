@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter-like Communication Page</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            box-sizing: border-box;
+        }
+        .left-sidebar, .right-sidebar {
+            width:25%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #fff;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        .left-sidebar {
+            border-right: 1px solid #ddd;
+        }
+        .right-sidebar {
+            border-left: 1px solid #ddd;
+        }
+        .center-column {
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            height: 100vh;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .message-box {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .message-box strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .search-box {
+            margin-bottom: 20px;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .buttons .btn {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .buttons .btn:hover {
+            background-color: #0056b3;
+        }
+        .famous-persons, .groups {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .famous-persons h3, .groups h3 {
+            margin: 0 0 10px 0;
+        }
+        .famous-persons ul, .groups ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .famous-persons ul li, .groups ul li {
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+        .famous-persons ul li img {
+            width: 30px; /* Adjust size of the avatar image */
+            height: 30px;
+            border-radius: 50%; /* Ensure it's a circle */
+            margin-right: 10px;
+        }
+        .new-message-box {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .new-message-box h3 {
+            margin: 0 0 10px 0;
+        }
+        .new-message-box textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            resize: vertical;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+        .submit-btn {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .submit-btn:hover {
+            background-color: #218838;
+        }
+        .icon-container {
+            display: flex;
+            justify-content: space-between;
+            width: 200px; /* Adjust width as needed */
+            margin-top: 20px;
+        }
+        .icon {
+            font-size: 24px; /* Adjust size as needed */
+            color: #2fb7ae; /* Adjust color as needed */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="left-sidebar">
+            <div class="search-box">
+                <input type="text" placeholder="Search" id="search">
+            </div>
+            <div class="buttons">
+                <button class="btn">Farmers</button>
+                <button class="btn">Manufacturer</button>
+                <button class="btn">Contractor</button>
+                <button class="btn">Seller</button>
+                <button class="btn">Gardener</button>
+                <button class="btn">Harvester</button>
+            </div>
+            <div class="famous-persons">
+                <h3>Famous Persons</h3>
+                <ul>
+                    <li><img src="\static\images\download (1).jpg" alt="Subhash Palekar"><span>Subhash Palekar</span></li>
+                    <li><img src="\static\images\download (2).jpg" alt="Krishna Byre Gowda"><span>Krishna Byre Gowda</span></li>
+                    <li><img src="\static\images\download (3).jpg" alt="P. Sainath"><span>P. Sainath</span></li>
+                    <li><img src="\static\images\download.jpg" alt="Devinder Sharma"><span>Devinder Sharma</span></li>
+                    <li><img src="\static\images\images.jpg" alt="Narayana Reddy"><span>Narayana Reddy</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Center Column -->
+        <div class="center-column">
+            <div class="message-box">
+                <strong>Ramesh</strong>
+                <p>Hey everyone, I'm Ramesh from Andhra Pradesh. Thinking of trying out this new organic fertilizer on my farm. Any tips or experiences to share? #OrganicFarming #FertilizerTips.</p>
+                <div class="icon-container">
+                    <i class="far fa-thumbs-up icon"></i> <!-- Like icon -->
+                    <i class="far fa-comment icon"></i> <!-- Comment icon -->
+                    <i class="fas fa-share icon"></i> <!-- Share icon -->
+                </div>
+            </div>
+            <div class="message-box">
+                <strong>Kiran</strong>
+                <p>Namaste, I'm Kiran from Karnataka. The prices we're getting for our crops are just not fair. Who's with me in raising our voices? #FarmersProtest #FairPrices.</p>
+                <div class="icon-container">
+                    <i class="far fa-thumbs-up icon"></i> <!-- Like icon -->
+                    <i class="far fa-comment icon"></i> <!-- Comment icon -->
+                    <i class="fas fa-share icon"></i> <!-- Share icon -->
+                </div>
+            </div>
+            <div class="message-box">
+                <strong>Radha</strong>
+                <p>Hello friends, this is Radha from Uttar Pradesh. I've been using drip irrigation and it's been a game-changer for me. Saves water and boosts yield. #DripIrrigation #FarmingTips.</p>
+                <div class="icon-container">
+                    <i class="far fa-thumbs-up icon"></i> <!-- Like icon -->
+                    <i class="far fa-comment icon"></i> <!-- Comment icon -->
+                    <i class="fas fa-share icon"></i> <!-- Share icon -->
+                </div>
+            </div>
+            <div class="message-box">
+                <strong>Amit</strong>
+                <p>Hi all, I'm Amit from Maharashtra. The use of pesticides is taking a toll on our health and crops. It's time to switch to safer alternatives. #PesticideFree #SafeFarming.</p>
+                <div class="icon-container">
+                    <i class="far fa-thumbs-up icon"></i> <!-- Like icon -->
+                    <i class="far fa-comment icon"></i> <!-- Comment icon -->
+                    <i class="fas fa-share icon"></i> <!-- Share icon -->
+                </div>
+            </div>
+            <div class="message-box">
+                <strong>Karthik</strong>
+                <p>Greetings, I'm Karthik from Tamil Nadu. Our traditional farming methods have sustained us for generations. Let's not lose them to modernization. #TraditionalFarming #Heritage.</p>
+                <div class="icon-container">
+                    <i class="far fa-thumbs-up icon"></i> <!-- Like icon -->
+                    <i class="far fa-comment icon"></i> <!-- Comment icon -->
+                    <i class="fas fa-share icon"></i> <!-- Share icon -->
+                </div>
+            </div>
+            <div class="message-box">
+                <strong>Sangeeta</strong>
+                <p>Jai Kisan! I'm Sangeeta from Punjab. Join me in the fight for our rights. Together, we can make a difference. #FarmersUnity #Protest.</p>
+                <div class="icon-container">
+                    <i class="far fa-thumbs-up icon"></i> <!-- Like icon -->
+                    <i class="far fa-comment icon"></i> <!-- Comment icon -->
+                    <i class="fas fa-share icon"></i> <!-- Share icon -->
+                </div>
+            </div>
+            <div class="message-box">
+                <strong>Ravi</strong>
+                <p>Hey there, this is Ravi from Rajasthan. Embracing technology has helped me farm smarter. What tech innovations are you using on your farm? #TechInFarming #SmartFarming.</p>
+                <div class="icon-container">
+                    <i class="far fa-thumbs-up icon"></i> <!-- Like icon -->
+                    <i class="far fa-comment icon"></i> <!-- Comment icon -->
+                    <i class="fas fa-share icon"></i> <!-- Share icon -->
+                </div>
+            </div>
+            <div class="message-box">
+                <strong>Anjali</strong>
+                <p>Hello everyone, I'm Anjali from Gujarat. Seed sovereignty is crucial for our future. Let's protect our native seeds. #SeedSovereignty #ProtectOurSeeds.</p>
+                <div class="icon-container">
+                    <i class="far fa-thumbs-up icon"></i> <!-- Like icon -->
+                    <i class="far fa-comment icon"></i> <!-- Comment icon -->
+                    <i class="fas fa-share icon"></i> <!-- Share icon -->
+                </div>
+            </div>
+            <div class="message-box">
+                <strong>Venkat</strong>
+                <p>Hi friends, I'm Venkat from Telangana. Water is a lifeline for us farmers. Let's demand our right to water resources. #WaterRights #FarmersVoice.</p>
+                <div class="icon-container">
+                    <i class="far fa-thumbs-up icon"></i> <!-- Like icon -->
+                    <i class="far fa-comment icon"></i> <!-- Comment icon -->
+                    <i class="fas fa-share icon"></i> <!-- Share icon -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="right-sidebar">
+            <div class="new-message-box">
+                <h3>Post New Message</h3>
+                <textarea placeholder="Type your message here..."></textarea>
+                    <button class="submit-btn">Submit</button>
+            </div>
+                <div class="groups">
+                    <h3>Groups and Communities</h3>
+                    <ul>
+                        <li>Bharatiya Jana Seva Mission ( BJSM ) </li>
+                        <li>IASP India Foundation</li>
+                        <li>Organic Farming Association of India</li>
+                        <li>Farmer Producer Organizations (FPOs)</li>
+                        <li>The Federation of All India Farmer Associations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

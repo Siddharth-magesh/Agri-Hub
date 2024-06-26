@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Display</title>
+    <style>
+      /* Resetting default margins and paddings */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #f5c6aa;
+      }
+      /* Basic styling for the entire section */
+      .products {
+        font-family: Arial, sans-serif;
+        background-color: #f5c6aa;
+        padding: 20px 0; /* Vertical padding */
+      }
+
+      /* Container for centering content */
+      .container {
+        max-width: 1200px;
+        margin: 20px auto; /* Center align */
+        margin-top: 2%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      /* Styling for each product item */
+      .product {
+        width: 250px; /* Adjust width as needed */
+        margin: 20px; /* Margin between products */
+        padding: 15px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .product:hover {
+        transform: scale(1.1);
+      }
+
+      /* Styling for the product details section */
+      .product-details {
+        margin-top: 15px;
+      }
+
+      /* Category styling */
+      .category {
+        font-size: 12px;
+        color: #9ca3af; /* Light gray */
+        text-transform: uppercase;
+      }
+
+      /* Product title styling */
+      .product-title {
+        font-size: 18px;
+        color: #1f2937; /* Dark gray */
+        font-weight: bold;
+        margin-top: 5px;
+      }
+
+      /* Product description styling */
+      .product-description {
+        font-size: 14px;
+        color: #555555; /* Medium gray */
+        margin-top: 5px;
+      }
+      .product-description ul {
+        margin-left: 0; /* Adjust the left margin as needed */
+        padding: left 25px; /* Remove default padding */
+      }
+      .product-description ul li {
+        list-style-type: disc; /* Use a disc bullet for list items */
+        margin-bottom: 5px; /* Adjust spacing between list items */
+        margin-right: 30px;
+      }
+
+      /* Product price styling */
+      .product-price {
+        font-size: 16px;
+        color: #4caf50; /* Green */
+        margin-top: 10px;
+      }
+      h1 {
+        font-size: 20px; /* Font size */
+        color: #171515; /* Text color */
+        font-weight: bold; /* Bold text */
+        margin: 10px 0; /* Vertical margins */
+        text-align: center; /* Center alignment */
+      }
+      h5 {
+        font-size: 50px; /* Font size */
+        color: #060606; /* Text color */
+        font-weight: bold; /* Bold text */
+        margin: 10px 0; /* Vertical margins */
+        text-align: center; /* Center alignment */
+      }
+      .linear-text-box {
+        background-color: #f0ebe3;
+        width: 100%; /* Full width */
+        max-width: 100%; /* Max width */
+        padding: 10px; /* Padding inside the text box */
+        margin: 20px 0; /* Vertical margin */
+        border: 1px solid #0b0b0b; /* Border */
+        border-radius: 5px; /* Rounded corners */
+        font-size: 16px; /* Font size */
+        outline: none; /* Remove outline on focus */
+        transition: border-color 0.3s ease; /* Smooth transition */
+      }
+
+      .linear-text-box:focus {
+        border-color: #4caf50; /* Change border color on focus */
+      }
+      .btn {
+        outline: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #d28116;
+        min-width: 200px;
+        border: 0;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        padding: 16px 20px;
+        margin-left: 43%;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        opacity: 0.95;
+      }
+
+      .btn .animation {
+        border-radius: 100%;
+        animation: ripple 0.6s linear infinite;
+      }
+
+      @keyframes ripple {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1),
+            0 0 0 20px rgba(255, 255, 255, 0.1),
+            0 0 0 40px rgba(255, 255, 255, 0.1),
+            0 0 0 60px rgba(255, 255, 255, 0.1);
+        }
+
+        100% {
+          box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1),
+            0 0 0 40px rgba(255, 255, 255, 0.1),
+            0 0 0 60px rgba(255, 255, 255, 0.1),
+            0 0 0 80px rgba(255, 255, 255, 0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h5>Loan</h5>
+    <div class="linear-text-box">
+      <h1>
+        In agriculture, the "Loan" category facilitates access to financial
+        resources for farmers to invest in equipment, livestock, and operational
+        expenses. It provides crucial funding options with tailored terms and
+        conditions to support agricultural activities and enhance productivity
+        effectively.
+      </h1>
+    </div>
+    <a href="{{url_for('loanformpage')}}">
+      <button class="btn">
+        <i class="animation"></i>Click Here To Apply<i class="animation"></i>
+      </button>
+    </a>
+    <section class="products">
+      <div class="container">
+        <!-- Crop Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">1. Operating Loans</h2>
+            <p class="product-description">
+              Purpose: To cover short-term operational expenses such as seed,
+              fertilizer, feed, labor, and other day-to-day costs.
+            </p>
+            <p class="product-description">
+              Term Length: Usually short-term, often repayable within a year.
+            </p>
+            <p class="product-description">
+              Conditions: May require collateral or a strong credit history.
+            </p>
+          </div>
+        </div>
+
+        <!-- Livestock Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">2. Equipment Loans</h2>
+            <p class="product-description">
+              Purpose: For purchasing new or used farming equipment such as
+              tractors, harvesters, irrigation systems, and other machinery.
+            </p>
+            <p class="product-description">
+              Term Length: Medium to long-term, typically 3 to 7 years.
+            </p>
+            <p class="product-description">
+              Conditions: Equipment often serves as collateral.
+            </p>
+          </div>
+        </div>
+
+        <!-- Farm Property Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">3. Real Estate Loans</h2>
+            <p class="product-description">
+              Purpose: To purchase or refinance farmland or other real estate.
+            </p>
+            <p class="product-description">
+              Term Length: Long-term, often 15 to 30 years.
+            </p>
+            <p class="product-description">
+              Conditions: Requires significant collateral, usually the land
+              being purchased or refinanced.
+            </p>
+          </div>
+        </div>
+
+        <!-- Farm Liability Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">4. Livestock Loan</h2>
+            <p class="product-description">
+              Purpose: To purchase livestock such as cattle, poultry, swine, or
+              other animals.
+            </p>
+            <p class="product-description">
+              Term Length: Short to medium-term, depending on the livestock and
+              business cycle.
+            </p>
+            <p class="product-description">
+              Conditions: Livestock may serve as collateral.
+            </p>
+          </div>
+        </div>
+
+        <!-- Farm Vehicle Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">5.Farm Storage Facility Loans</h2>
+            <p class="product-description">
+              Purpose: To build or upgrade storage facilities for grain, silage,
+              hay, or other agricultural products.
+            </p>
+            <p class="product-description">
+              Term Length: Medium to long-term, usually up to 12 years.
+            </p>
+            <p class="product-description">
+              Conditions: The storage facility often serves as collateral.
+            </p>
+          </div>
+        </div>
+
+        <!-- Workers' Compensation Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">6. Disaster Loans</h2>
+            <p class="product-description">
+              Purpose: To help farmers recover from natural disasters such as
+              floods, droughts, hurricanes, or other events.
+            </p>
+            <p class="product-description">
+              Term Length: Varies based on the extent of damage and repayment
+              capacity.
+            </p>
+            <p class="product-description">
+              Conditions: Typically requires documentation of the disaster's
+              impact.
+            </p>
+          </div>
+        </div>
+
+        <!-- Crop Revenue Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">7.Youth Loans</h2>
+            <p class="product-description">
+              Purpose: To help young farmers and 4-H or FFA participants finance
+              agriculture-related projects.
+            </p>
+            <p class="product-description">
+              Term Length: Short to medium-term, depending on the project.
+            </p>
+            <p class="product-description">
+              Conditions: Requires a project plan and adult sponsorship.
+            </p>
+          </div>
+        </div>
+
+        <!-- Umbrella Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">8.Microloans</h2>
+            <p class="product-description">
+              Purpose: To provide small loans for beginning farmers or those
+              with small-scale farming operations.
+            </p>
+            <p class="product-description">
+              Term Length: Short to medium-term, typically up to 7 years.
+            </p>
+            <p class="product-description">
+              Conditions: Less stringent requirements compared to larger loans.
+            </p>
+          </div>
+        </div>
+
+        <!-- Business Interruption Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">
+              9.Environmental Quality Incentives Program (EQIP) Loans
+            </h2>
+            <p class="product-description">
+              Purpose: To promote conservation practices and improve
+              environmental quality on the farm.
+            </p>
+            <p class="product-description">
+              Term Length: Varies based on the project.
+            </p>
+            <p class="product-description">
+              Conditions: Requires compliance with conservation plans and
+              practices.
+            </p>
+          </div>
+        </div>
+
+        <!-- Specialty Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">10.Value-Added Producer Grants (VAPG)</h2>
+            <p class="product-description">
+              Purpose: To help farmers add value to their products through
+              processing, marketing, and other value-added activities.
+            </p>
+            <p class="product-description">
+              Term Length: Varies based on the project.
+            </p>
+            <p class="product-description">
+              Conditions: Requires a detailed business plan and feasibility
+              study.
+            </p>
+          </div>
+        </div>
+
+        <!-- Environmental Liability Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">11.Beginning Farmer Loans</h2>
+            <p class="product-description">
+              Purpose: To assist new and beginning farmers in acquiring land,
+              equipment, and other essentials.
+            </p>
+            <p class="product-description">
+              Term Length: Medium to long-term, depending on the loan type.
+            </p>
+            <p class="product-description">
+              Conditions: Designed specifically for farmers with limited farming
+              experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

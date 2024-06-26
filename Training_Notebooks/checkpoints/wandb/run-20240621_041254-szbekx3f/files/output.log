@@ -1,0 +1,64 @@
+d:\newenv\lib\site-packages\torch\utils\checkpoint.py:464: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.4 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+d:\newenv\lib\site-packages\transformers\models\llama\modeling_llama.py:649: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at ..\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:455.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+{'loss': 0.5113, 'grad_norm': 0.796561062335968, 'learning_rate': 0.00019878344637963306, 'epoch': 0.1}
+d:\newenv\lib\site-packages\huggingface_hub\file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+d:\newenv\lib\site-packages\torch\utils\checkpoint.py:464: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.4 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+{'loss': 0.4462, 'grad_norm': 0.6546969413757324, 'learning_rate': 0.0001951633855727567, 'epoch': 0.2}
+{'loss': 0.4346, 'grad_norm': 0.6077918410301208, 'learning_rate': 0.00018922789754098208, 'epoch': 0.3}
+d:\newenv\lib\site-packages\huggingface_hub\file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+d:\newenv\lib\site-packages\torch\utils\checkpoint.py:464: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.4 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+{'loss': 0.4238, 'grad_norm': 0.5717236399650574, 'learning_rate': 0.0001811213990733832, 'epoch': 0.4}
+{'loss': 0.4176, 'grad_norm': 0.7789021134376526, 'learning_rate': 0.0001710631047500227, 'epoch': 0.5}
+d:\newenv\lib\site-packages\huggingface_hub\file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+d:\newenv\lib\site-packages\torch\utils\checkpoint.py:464: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.4 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+{'loss': 0.4194, 'grad_norm': 0.6244179606437683, 'learning_rate': 0.0001592575119564367, 'epoch': 0.6}
+{'loss': 0.4159, 'grad_norm': 0.5434772372245789, 'learning_rate': 0.00014601012034875992, 'epoch': 0.7}
+{'loss': 0.4087, 'grad_norm': 0.6787295937538147, 'learning_rate': 0.000131643253171407, 'epoch': 0.8}
+d:\newenv\lib\site-packages\huggingface_hub\file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+d:\newenv\lib\site-packages\torch\utils\checkpoint.py:464: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.4 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+{'loss': 0.4053, 'grad_norm': 0.7126988172531128, 'learning_rate': 0.00011650647170993684, 'epoch': 0.89}
+d:\newenv\lib\site-packages\huggingface_hub\file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+{'loss': 0.3997, 'grad_norm': 0.7405012845993042, 'learning_rate': 0.00010096807009010249, 'epoch': 0.99}
+d:\newenv\lib\site-packages\torch\utils\checkpoint.py:464: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.4 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+{'loss': 0.3938, 'grad_norm': 0.654884934425354, 'learning_rate': 8.540611428681047e-05, 'epoch': 1.09}
+d:\newenv\lib\site-packages\huggingface_hub\file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+{'loss': 0.3877, 'grad_norm': 0.6604786515235901, 'learning_rate': 7.019924337351055e-05, 'epoch': 1.19}
+d:\newenv\lib\site-packages\torch\utils\checkpoint.py:464: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.4 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+{'loss': 0.388, 'grad_norm': 0.6319530606269836, 'learning_rate': 5.5717456827483206e-05, 'epoch': 1.29}
+{'loss': 0.3833, 'grad_norm': 0.6198636889457703, 'learning_rate': 4.233862349014739e-05, 'epoch': 1.39}
+d:\newenv\lib\site-packages\huggingface_hub\file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+d:\newenv\lib\site-packages\torch\utils\checkpoint.py:464: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.4 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+{'loss': 0.3844, 'grad_norm': 0.6944307684898376, 'learning_rate': 3.033475135322126e-05, 'epoch': 1.49}
+{'loss': 0.3829, 'grad_norm': 0.6459012627601624, 'learning_rate': 2.002590942539516e-05, 'epoch': 1.59}
+d:\newenv\lib\site-packages\huggingface_hub\file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+d:\newenv\lib\site-packages\torch\utils\checkpoint.py:464: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.4 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+{'loss': 0.3799, 'grad_norm': 0.6471442580223083, 'learning_rate': 1.1662922886050942e-05, 'epoch': 1.69}
+d:\newenv\lib\site-packages\huggingface_hub\file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+{'loss': 0.383, 'grad_norm': 0.640770435333252, 'learning_rate': 5.449272166218899e-06, 'epoch': 1.79}
+d:\newenv\lib\site-packages\torch\utils\checkpoint.py:464: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.4 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+{'loss': 0.3825, 'grad_norm': 0.5852525234222412, 'learning_rate': 1.5415995110600657e-06, 'epoch': 1.89}
+{'loss': 0.385, 'grad_norm': 0.6110746264457703, 'learning_rate': 1.9352669449190785e-08, 'epoch': 1.99}
+d:\newenv\lib\site-packages\huggingface_hub\file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+d:\newenv\lib\site-packages\torch\utils\checkpoint.py:464: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.4 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(

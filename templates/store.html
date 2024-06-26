@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hugging Face Products</title>
+    <style>
+      /* Resetting default margins and paddings */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Basic styling for the entire page */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        display: flex;
+      }
+
+      /* Styling for the sidebar */
+      .sidebar {
+        flex: 0 90% 25%; /* Sidebar takes 25% of container width */
+        background-color: #ffffff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Styling for search input and button */
+      .search {
+        margin-bottom: 20px;
+      }
+
+      .search input {
+        width: calc(100% - 100px); /* Adjust width */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px 0 0 4px;
+        font-size: 14px;
+      }
+
+      .search button {
+        width: 80px; /* Adjust width */
+        padding: 10px;
+        background-color: #4caf50;
+        color: #ffffff;
+        border: none;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: 20px;
+      }
+
+      /* Styling for filters and sorting */
+      .filters,
+      .sorting {
+        margin-bottom: 20px;
+      }
+
+      .filters h2,
+      .sorting h2 {
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .filters label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .filters select,
+      .sorting select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      /* Styling for the products section */
+      .products {
+        flex: 0 0 75%; /* Products section takes 75% of container width */
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .product {
+        width: calc(33.33% - 20px); /* Adjust width */
+        margin: 0 20px 20px 0;
+        padding: 15px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-image {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .product-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .product-details {
+        text-align: center;
+      }
+
+      .product-title {
+        font-size: 18px;
+        color: #1f2937; /* Dark gray */
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .product-category {
+        font-size: 14px;
+        color: #9ca3af; /* Light gray */
+        margin-bottom: 5px;
+      }
+
+      .product-price {
+        font-size: 16px;
+        color: #4caf50; /* Green */
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .product-description {
+        font-size: 14px;
+        color: #555555;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Sample product data
+        const products = [
+          {
+            title: "Wheat ",
+            category: "Crop",
+            price: 22.75,
+            description:
+              "Essential cereal grain for flour used in bread and baked goods.",
+            image: "/static/images/Wheat.png",
+          },
+          {
+            title: "Barley",
+            category: "Crop",
+            price: 18.5,
+            description:
+              "Versatile grain with a nutty flavor, used in soups and brewing.",
+            image: "/static/images/Barley.jpg",
+          },
+          {
+            title: "Gram",
+            category: "Crop",
+            price: 54.4,
+            description: "High-protein legume used in hummus and dishes.",
+            image: "/static/images/Gram.png",
+          },
+          {
+            title: "Lentil",
+            category: "Crop",
+            price: 64.25,
+            description: " Protein-rich legume for soups, stews, and salads.",
+            image: "/static/images/Lentil.jpg",
+          },
+          {
+            title: "Mustard",
+            category: "Crop",
+            price: 61.75,
+            description:
+              "Spice with heat and flavor, used ground or whole in cooking.",
+            image: "/static/images/Mustard.jpg",
+          },
+          {
+            title: "Paddy",
+            category: "Crop",
+            price: 20.4,
+            description: "Staple food in husk form, processed into rice.",
+            image: "/static/images/Paddy.jpg",
+          },
+          {
+            title: "Maize",
+            category: "Crop",
+            price: 21.21,
+            description:
+              "Cereal grain used for food, livestock feed, and products.",
+            image: "/static/images/Maize.webp",
+          },
+          {
+            title: "Cotton",
+            category: "Crop",
+            price: 60.2,
+            description: "Soft fiber used widely in textiles and clothing.",
+            image: "/static/images/Cotton.webp",
+          },
+          {
+            title: "Groundnut",
+            category: "Crop",
+            price: 58.5,
+            description: "Protein-rich legume used in cooking and snacks.",
+            image: "/static/images/Groundnut.webp",
+          },
+          {
+            title: "Sunflower Seeds",
+            category: "Crop",
+            price: 62.05,
+            description: "Nutritious seeds for snacking and oil production.",
+            image: "/static/images/Sunflower seeds.jpg",
+          },
+          {
+            title: "Soybeans",
+            category: "Crop",
+            price: 46.0,
+            description:
+              "Protein-rich legume used in tofu, soy milk, and sauces.",
+            image: "/static/images/Soybeans.jpg",
+          },
+          {
+            title: "Safflower",
+            category: "Crop",
+            price: 56.5,
+            description:
+              "Seeds used to produce safflower oil for cooking and health.",
+            image: "/static/images/Safflower.jpg",
+          },
+          {
+            title: "Pigeon Pea ",
+            category: "Crop",
+            price: 66.0,
+            description:
+              "Drought-tolerant legume used in Indian cuisine (toor dal).",
+            image: "/static/images/Pigeon pea.webp",
+          },
+          {
+            title: "Black Gram",
+            category: "Crop",
+            price: 69.5,
+            description:
+              "Protein-rich pulse used in Indian dishes like dal makhani.",
+            image: "/static/images/Black Gram.jpg",
+          },
+          {
+            title: "Green Gram",
+            category: "Crop",
+            price: 77.55,
+            description: "Small legume used in salads and stir-fries.",
+            image: "/static/images/Green Gram.webp",
+          },
+          {
+            title: "Castor Seed",
+            category: "Crop",
+            price: 56.88,
+            description:
+              "Seeds used to produce castor oil for industrial and medicinal applications.",
+            image: "/static/images/Castor seed.jpg",
+          },
+          {
+            title: "Cumin Seed",
+            category: "Crop",
+            price: 67.0,
+            description:
+              "Popular spice known for its warm, earthy flavor in various cuisines.",
+            image: "/static/images/Cumin seed.jpg",
+          },
+          {
+            title: "Fennel Seed",
+            category: "Crop",
+            price: 64.0,
+            description:
+              "Sweet, licorice-like spice used in breads and curries.",
+            image: "/static/images/Fennel seed.jpg",
+          },
+          {
+            title: "Sesame Seed",
+            category: "Crop",
+            price: 29.7,
+            description: "Nutty seeds used for oil, tahini, and snacks.",
+            image: "/static/images/Black Seasame seed.jpg",
+          },
+
+          {
+            title: "Jowar",
+            category: "Crop",
+            price: 11.0,
+            description:
+              "Cereal grain for food and livestock feed, processed into flour.",
+            image: "/static/images/Jowar.webp",
+          },
+          {
+            title: "Tractors",
+            category: "Machinery",
+            price: 620000,
+            description:
+              "Various agricultural machinery aiding tasks like plowing and planting.",
+            image: "/static/images/Tractor1.webp",
+          },
+          {
+            title: "Farm Equipment",
+            category: "Machinery",
+            price: 620000,
+            description:
+              "Various agricultural machinery aiding tasks like plowing and planting.",
+            image: "/static/images/Farm Equipment.jpg",
+          },
+          {
+            title: "Material Handling Equipment",
+            category: "Machinery",
+            price: 720000,
+            description:
+              "Tractors with loaders and forklifts for farm material handling.",
+            image: "/static/images/Material Hnadling Equipment.jpeg",
+          },
+          {
+            title: "Balers",
+            category: "Machinery",
+            price: 200000,
+            description:
+              "Adds balers for compressing and baling hay and straw.",
+            image: "/static/images/Baler.jpg",
+          },
+          {
+            title: "Rice Transplanters",
+            category: "Machinery",
+            price: 600000,
+            description:
+              "Involves tractors and specialized rice planting machines.",
+            image: "/static/images/Rice Transplanter.jpg",
+          },
+          {
+            title: "Compact Tractors",
+            category: "Machiery",
+            price: 960000,
+            description:
+              "Small, maneuverable tractors for specialized farming.",
+            image: "/static/images/Tractor3.png",
+          },
+          {
+            title: "Power Tillers",
+            category: "Machinery",
+            price: 500000,
+            description:
+              "Small, maneuverable tractors for specialized farming.",
+            image: "/static/images/Power Tiller.jpg",
+          },
+          {
+            title: "Sprayers",
+            category: "Machinery",
+            price: 115000,
+            description:
+              "Equipment for applying chemicals and clearing vegetation.",
+            image: "/static/images/Sprayer.webp",
+          },
+          {
+            title: "Brush Cutters",
+            category: "Machinery",
+            price: 115000,
+            description:
+              "Equipment for applying chemicals and clearing vegetation.",
+            image: "/static/images/Brush Cutter.png",
+          },
+          {
+            title: "Milking Machine",
+            category: "Machinery",
+            price: 75000,
+            description: "Adds containers for milk storage and transport.",
+            image: "/static/images/Milking Machine.webp",
+          },
+          {
+            title: "Milk Coolers",
+            category: "Machinery",
+            price: 140000,
+            description: "Adds containers for milk storage and transport.",
+            image: "/static/images/Milk cooler.jpg",
+          },
+          {
+            title: "Fogging Machines",
+            category: "Machinery",
+            price: 150000,
+            description: "For pest control, disinfection, and irrigation.",
+            image: "/static/images/Fogging Machine.jpg",
+          },
+          {
+            title: "Water Pumps",
+            category: "Machinery",
+            price: 75000,
+            description: "For pest control, disinfection, and irrigation.",
+            image: "/static/images/Water Pump.jpg",
+          },
+          {
+            title: "Hydralic Excavators",
+            category: "Machinery",
+            price: 900000,
+            description: " Used in digging, lifting, and moving heavy objects.",
+            image: "/static/images/Hydraulic Excavator.jpg",
+          },
+          {
+            title: "Earthmoving Equipment",
+            category: "Machinery",
+            price: 1500000,
+            description: "Includes excavators, loaders, and forklifts.",
+            image: "/static/images/Earth Moving Machine.jpg",
+          },
+          {
+            title: "Trucks ",
+            category: "Machinery",
+            price: 1500000,
+            description: "Includes excavators, loaders, and forklifts.",
+            image: "/static/images/Trucks.jpeg",
+          },
+
+          {
+            title: "Urea",
+            category: "Fertilizers",
+            price: 270,
+            description:
+              "Nitrogen fertilizer easily absorbed by plant roots, promoting leafy growth.",
+            image: "/static/images/Urea.webp",
+          },
+          {
+            title: "Di-Ammonium Phosphate",
+            category: "Fertilizers",
+            price: 1200,
+            description:
+              "Contains nitrogen and phosphorus, ideal for early plant growth and root development.",
+            image: "/static/images/Di-Ammonium Phosphate.jpg",
+          },
+
+          {
+            title: "Complex Fertilizers",
+            category: "Fertilizers",
+            price: 1300,
+            description:
+              "Blend multiple nutrients like nitrogen, phosphorus, and potassium for balanced plant nutrition and improved soil fertility.",
+            image: "/static/images/Conpelx Fertilizer.jpg",
+          },
+          {
+            title: "Ammonium Sulphate",
+            category: "Fertilizers",
+            price: 600,
+            description:
+              "Nitrogen fertilizer suitable for alkaline soils, provides quick-release nitrogen and lowers soil pH.",
+            image: "/static/images/Ammonium Sulphate.png",
+          },
+          {
+            title: "Cattle",
+            category: "Husbandry",
+            price: 100000,
+            description:
+              "Domesticated mammals raised for beef, milk, hides, and as draft animals. Grazing herbivores typically found on farms or ranches.",
+            image: "/static/images/Cattle.webp",
+          },
+          {
+            title: "Sheep",
+            category: "Husbandry",
+            price: 8500,
+            description:
+              "Ruminant animals raised for meat (lamb or mutton), wool, and milk. Grazing animals often kept in flocks for both agricultural production and land management.",
+            image: "/static/images/Sheep.webp",
+          },
+          {
+            title: "Pig",
+            category: "Husbandry",
+            price: 8000,
+            description:
+              "Domesticated animals raised primarily for meat (pork). Highly adaptable omnivores fed grains, fruits, and vegetables in diverse environments.",
+            image: "/static/images/Pig.jpg",
+          },
+          {
+            title: "Poultry",
+            category: "Husbandry",
+            price: 225,
+            description:
+              "Domesticated birds like chickens, turkeys, and ducks raised for meat and eggs. Chickens are widespread and easy to raise in small flocks for agriculture and backyard farming.",
+            image: "/static/images/Poultry.jpg",
+          },
+          {
+            title: "Tractor",
+            category: "Rental",
+            price: 7000,
+            description:
+              "Various agricultural machinery aiding tasks like plowing and planting.",
+            image: "/static/images/Tractor1.webp",
+          },
+          {
+            title: "Earth Moving Machine",
+            category: "Rental",
+            price: 10000,
+            description: "Includes excavators, loaders, and forklifts.",
+            image: "/static/images/Earth Moving Machine.jpg",
+          },
+          {
+            title: "Hydralic Excavator",
+            category: "Rental",
+            price: 3000,
+            description: "Used in digging, lifting, and moving heavy objects.",
+            image: "/static/images/Hydraulic Excavator.jpg",
+          },
+          {
+            title: "Rice Transplanters",
+            category: "Rental",
+            price: 5000,
+            description:
+              "Involves tractors and specialized rice planting machines.",
+            image: "/static/images/Rice Transplanter.jpg",
+          },
+        ];
+
+        // Elements
+        const productContainer = document.querySelector(".products");
+        const categoryFilter = document.getElementById("category");
+        const sortFilter = document.getElementById("sort");
+        const searchInput = document.querySelector(".search input");
+
+        // Function to display products
+        const displayProducts = (filteredProducts) => {
+          productContainer.innerHTML = ""; // Clear the container
+          if (filteredProducts.length === 0) {
+            productContainer.innerHTML = "<p>No products found.</p>";
+            return;
+          }
+          filteredProducts.forEach((product) => {
+            const productElement = document.createElement("div");
+            productElement.classList.add("product");
+            productElement.innerHTML = `
+        <div class="product-image">
+          <img src="${product.image}" alt="${product.title}">
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">${product.title}</h3>
+          <p class="product-category">Category: ${product.category}</p>
+          <p class="product-price">$${product.price.toFixed(2)}</p>
+          <p class="product-description">${product.description}</p>
+        </div>
+      `;
+            productContainer.appendChild(productElement);
+          });
+        };
+
+        // Function to filter and sort products
+        const filterAndSortProducts = () => {
+          let filteredProducts = products;
+
+          // Filter by category
+          const selectedCategory = categoryFilter.value;
+          if (selectedCategory !== "all") {
+            filteredProducts = filteredProducts.filter(
+              (product) =>
+                product.category.toLowerCase() ===
+                selectedCategory.toLowerCase()
+            );
+          }
+
+          // Filter by search term
+          const searchTerm = searchInput.value.toLowerCase();
+          if (searchTerm) {
+            filteredProducts = filteredProducts.filter(
+              (product) =>
+                product.title.toLowerCase().includes(searchTerm) ||
+                product.description.toLowerCase().includes(searchTerm)
+            );
+          }
+
+          // Sort products
+          const sortValue = sortFilter.value;
+          switch (sortValue) {
+            case "price-low":
+              filteredProducts.sort((a, b) => a.price - b.price);
+              break;
+            case "price-high":
+              filteredProducts.sort((a, b) => b.price - a.price);
+              break;
+            case "name-a-z":
+              filteredProducts.sort((a, b) => a.title.localeCompare(b.title));
+              break;
+            case "name-z-a":
+              filteredProducts.sort((a, b) => b.title.localeCompare(a.title));
+              break;
+            default:
+              break;
+          }
+
+          // Display filtered and sorted products
+          displayProducts(filteredProducts);
+        };
+
+        // Event listeners
+        categoryFilter.addEventListener("change", filterAndSortProducts);
+        sortFilter.addEventListener("change", filterAndSortProducts);
+        searchInput.addEventListener("input", filterAndSortProducts);
+
+        // Initial display
+        displayProducts(products);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Left Sidebar for Filters and Sorting -->
+      <aside class="sidebar">
+        <div class="search">
+          <input type="text" placeholder="Search products..." />
+          <button>Search</button>
+        </div>
+        <div class="filters">
+          <h2>Filters</h2>
+          <label for="category">Category:</label>
+          <select id="category">
+            <option value="all">All</option>
+            <option value="crop">Crop</option>
+            <option value="machinery">Machinery</option>
+            <option value="fertilizers">Fertilizers</option>
+            <option value="husbandry">Husbandry</option>
+            <option value="rental">Rental</option>
+          </select>
+        </div>
+        <div class="sorting">
+          <h2>Sort By</h2>
+          <select id="sort">
+            <option value="default">Default</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="name-a-z">Name: A to Z</option>
+            <option value="name-z-a">Name: Z to A</option>
+          </select>
+        </div>
+      </aside>
+
+      <!-- Right Content Area for Products -->
+      <section class="products">
+        <div class="product">
+          <div class="product-image">
+            <img src="https://via.placeholder.com/150" alt="Product Image" />
+          </div>
+          <div class="product-details">
+            <h3 class="product-title">Product Title</h3>
+            <p class="product-category">Category: Transformers</p>
+            <p class="product-price">$99.00</p>
+            <p class="product-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-image">
+            <img src="https://via.placeholder.com/150" alt="Product Image" />
+          </div>
+          <div class="product-details">
+            <h3 class="product-title">Product Title</h3>
+            <p class="product-category">Category: Transformers</p>
+            <p class="product-price">$99.00</p>
+            <p class="product-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-image">
+            <img src="https://via.placeholder.com/150" alt="Product Image" />
+          </div>
+          <div class="product-details">
+            <h3 class="product-title">Product Title</h3>
+            <p class="product-category">Category: Datasets</p>
+            <p class="product-price">$99.00</p>
+            <p class="product-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-image">
+            <img src="https://via.placeholder.com/150" alt="Product Image" />
+          </div>
+          <div class="product-details">
+            <h3 class="product-title">Product Title</h3>
+            <p class="product-category">Category:Datasets</p>
+            <p class="product-price">$99.00</p>
+            <p class="product-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-image">
+            <img src="https://via.placeholder.com/150" alt="Product Image" />
+          </div>
+          <div class="product-details">
+            <h3 class="product-title">Product Title</h3>
+            <p class="product-category">Category: Models</p>
+            <p class="product-price">$99.00</p>
+            <p class="product-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+        <div class="product">
+          <div class="product-image">
+            <img src="https://via.placeholder.com/150" alt="Product Image" />
+          </div>
+          <div class="product-details">
+            <h3 class="product-title">Product Title</h3>
+            <p class="product-category">Category: Models</p>
+            <p class="product-price">$99.00</p>
+            <p class="product-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+d:\newenv\lib\site-packages\torch\utils\checkpoint.py:464: UserWarning: torch.utils.checkpoint: the use_reentrant parameter should be passed explicitly. In version 2.4 we will raise an exception if use_reentrant is not passed. use_reentrant=False is recommended, but if you need to preserve the current default behavior, you can pass use_reentrant=True. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+d:\newenv\lib\site-packages\transformers\models\llama\modeling_llama.py:649: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at ..\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:455.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+{'loss': 2.7174, 'grad_norm': 1.70622980594635, 'learning_rate': 0.00019999959127410606, 'epoch': 0.0}
+{'loss': 2.0769, 'grad_norm': 1.9209623336791992, 'learning_rate': 0.00019999836509976534, 'epoch': 0.0}
+{'loss': 1.6197, 'grad_norm': 2.2375943660736084, 'learning_rate': 0.00019999632148700122, 'epoch': 0.0}
+{'loss': 1.1395, 'grad_norm': 1.6745188236236572, 'learning_rate': 0.00019999346045251925, 'epoch': 0.0}
+{'loss': 1.1691, 'grad_norm': 1.2871352434158325, 'learning_rate': 0.00019998978201970705, 'epoch': 0.0}
+{'loss': 1.2115, 'grad_norm': 1.327828049659729, 'learning_rate': 0.00019998528621863396, 'epoch': 0.01}
+{'loss': 0.9857, 'grad_norm': 1.7404500246047974, 'learning_rate': 0.00019997997308605109, 'epoch': 0.01}

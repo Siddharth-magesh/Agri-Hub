@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glassmorphism Boxes - Half Page Width</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Reset and global styles */
+      /* Reset and global styles */
+      /* Reset and global styles */
+      /* Reset and global styles */
+      *,
+      *:before,
+      *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #181817;
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .background {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%; /* Adjusted width */
+        height: 80vh; /* 80% of viewport height */
+        position: absolute;
+        top: 10%; /* Adjusted top position */
+      }
+
+      .box {
+        width: 45%; /* Adjusted width */
+        height: 90%; /* Adjusted height */
+        margin: 0 10px; /* Adjusted spacing */
+        background-color: #fefbf3; /* Transparent white */
+        border-radius: 20px;
+        backdrop-filter: blur(10px); /* Glass morphism effect */
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* Align text at the bottom */
+        align-items: center;
+        padding-bottom: 20px; /* Padding at the bottom */
+      }
+
+      .box:hover {
+        transform: scale(1.1);
+      }
+
+      .box img {
+        width: 50%; /* Adjusted image size */
+        height: 50%; /* Adjusted image size */
+
+        margin-bottom: 150px;
+      }
+      .box a {
+        padding-bottom: 20px;
+        color: rgb(21, 21, 22);
+        text-decoration: none; /* Removes the underline */
+        font-family: Arial, sans-serif;
+        font-weight: bolder;
+        font-size: 25px;
+        padding: 5px 10px;
+      }
+
+      .text-box {
+        width: 100%;
+        text-align: center;
+      }
+      .text-box a {
+        padding-bottom: 20px;
+      }
+      .text-box p {
+        padding-bottom: 20px;
+        color: #1d1818; /* White text */
+        font-weight: bold;
+        font-size: 24px; /* Increased font size */
+      }
+
+      .message {
+        position: absolute;
+        bottom: 20px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .message p {
+        font-size: 14px;
+        color: #f5f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <div class="shape shape-insurance"></div>
+      <div class="shape shape-loan"></div>
+    </div>
+
+    <div class="container">
+      <div class="box">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYTu4jE-tJ6ur8QPrxT5Kx4kFmCUdY8A-RHg&s"
+          alt="Insurance"
+        />
+        <div class="text-box">
+          <a href="{{ url_for('Insurancepage') }}">Insurance</a>
+        </div>
+      </div>
+      <div class="box">
+        <img
+          src="data:image/png;base64,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"
+          alt="Loan"
+        />
+        <div class="text-box">
+          <a href="{{ url_for('loanpage') }}">Loan</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="message">
+      <p>Explore our insurance and loan services</p>
+    </div>
+  </body>
+</html>

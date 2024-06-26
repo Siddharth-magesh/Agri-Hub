@@ -1,0 +1,38 @@
+create database agribot;
+
+use agribot;
+
+create table farmers(mobile_number integer(20),password varchar(20));
+ 
+create table buyer(mobile_number integer(20),password varchar(20));
+
+create table farmer1(name varchar(100), mobile_number integer(20), password varchar(20), address varchar(100), gender char(2), age integer(4), dateofbirth varchar(15), email varchar(30), blood_group varchar(20), unique_id varchar(20), state varchar(30), country varchar(30), pincode integer(10));
+
+create table manufacturer(name varchar(100), manufacturer_id varchar(10), mobile_number integer(10), company_name varchar(100), email varchar(30),
+password varchar(20), type varchar(30));
+
+create table details(acre integer(30), current_crop varchar(30), soil_type varchar(30), fertilizer_name varchar(100), fertilizer_company varchar(100),equipments_name varchar(100), equipments_quantity integer(5), fertilizer_type varchar(100), labour_used integer(5), seed varchar(30));
+
+create table purchase_history(product varchar(30), price integer(10),quantity integer(5),dateofpurchase varchar(20), insurancepolicyname varchar(60) ,insuranceduration varchar(20),insuranceissuancedate varchar(20), insuranceamount integer(10) ,loanname varchar(60), loanamount integer(10), loanduration varchar(20) ,loanissuancedate varchar(20));
+
+create table animals_details(cattlename varchar(30), quantity integer(5));
+
+create table personal_details(name varchar(50),email varchar(20), address varchar(60), age integer(5), state varchar(20), pincode integer(10), mobilenumber integer(20));
+
+ create table financial(loanid varchar(20), userid varchar(20), loantype varchar(30), loanamount integer(10), interestrate varchar(10), loanterm varchar(30), applicationdate varchar(20), approvaldate varchar(20), loanstatus varchar(30),  repaymentschedule varchar(20), expirationdate varchar(20), policystatus varchar(30), insurancetype varchar(60), coverageamount integer(10), policyterm varchar(30), policyid varchar(20), issuancedate varchar(20), coveragedetails varchar(60));
+
+ create table seed(name varchar(50), type varchar(20), sellername varchar(50), quantity integer(10), price integer(10));
+
+create table fertilizer(name varchar(50), sellername varchar(50), usedfor varchar(60),quantity integer(10), price integer(10));
+
+create table machinery(name varchar(50), sellername varchar(50), price integer(10),quantity integer(10));
+
+create table cattle(name varchar(50),sellername varchar(50), price integer(10), quantity integer(10), locality varchar(100));
+
+create table insurance(insurancetype varchar(60), insurancepolicyname varchar(100), duration varchar(30), companyname varchar(50), amount varchar(30));
+
+create table loan(loanname varchar(50), loantype varchar(50), interestrate varchar(30), bankname  varchar(50), duration varchar(30));
+
+create table selling(name varchar(50),EmailID varchar(20),contact_number integer(20),locality_address varchar(100),product_name varchar(50),product_quantity integer(20),unique_id varchar(20), price integer(10),password varchar(20),prodcut_type varchar(30));
+
+create table rantal(name varchar(50),price integer(10), sellername varchar(50));

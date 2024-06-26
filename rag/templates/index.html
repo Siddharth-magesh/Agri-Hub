@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot Dial Pad</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        text-align: center;
+      }
+
+      .dialpad-container {
+        padding: 30px 20px; /* Increased top padding and standard padding */
+        border: 2px solid #ccc; /* Border around the dial pad */
+        border-radius: 10px; /* Rounded corners for the border */
+        display: inline-block; /* Ensures the container fits around its contents */
+        position: relative; /* Enable absolute positioning for children */
+        height: 470px; /* Height adjusted to fit the dial pad */
+        width: 280px; /* Width adjusted to fit the dial pad */
+      }
+
+      .dialpad {
+        display: grid;
+        grid-template-columns: repeat(3, 80px); /* Three columns for buttons */
+        grid-template-rows: repeat(4, 80px); /* Four rows for buttons */
+        gap: 10px; /* Gap between buttons */
+        padding: 10px; /* Padding inside the dial pad */
+      }
+
+      .number-button {
+        font-size: 24px;
+        width: 80px;
+        height: 80px;
+        border: 1px solid #ccc;
+        border-radius: 50%; /* Make the buttons circular */
+        background-color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .number-button:hover {
+        background-color: #e0e0e0;
+      }
+
+      .dialpad-heading {
+        font-size: 24px; /* Increased font size */
+        margin-bottom: 10px;
+        margin-top: -20px; /* Adjusted top margin to lift the heading up */
+      }
+
+      .control-button {
+        font-size: 18px;
+        width: 100px;
+        height: 40px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        position: absolute;
+        bottom: 10px;
+      }
+
+      .control-button:hover {
+        background-color: #e0e0e0;
+      }
+
+      .start-button {
+        left: 10px;
+      }
+
+      .stop-button {
+        right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="dialpad-container">
+        <div class="dialpad-heading">Chatbot Dial Pad</div>
+        <div class="dialpad">
+          <form action="/dial" method="post">
+            <button class="number-button" type="submit" name="button" value="1">
+              1
+            </button>
+            <button class="number-button" type="submit" name="button" value="2">
+              2
+            </button>
+            <button class="number-button" type="submit" name="button" value="3">
+              3
+            </button>
+            <button class="number-button" type="submit" name="button" value="4">
+              4
+            </button>
+            <button class="number-button" type="submit" name="button" value="5">
+              5
+            </button>
+            <button class="number-button" type="submit" name="button" value="6">
+              6
+            </button>
+            <button class="number-button" type="submit" name="button" value="7">
+              7
+            </button>
+            <button class="number-button" type="submit" name="button" value="8">
+              8
+            </button>
+            <button class="number-button" type="submit" name="button" value="9">
+              9
+            </button>
+            <button class="number-button" type="submit" name="button" value="*">
+              *
+            </button>
+            <button class="number-button" type="submit" name="button" value="0">
+              0
+            </button>
+            <button class="number-button" type="submit" name="button" value="#">
+              #
+            </button>
+          </form>
+        </div>
+        <form
+          action="/start"
+          method="post"
+          style="
+            display: inline-block;
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+          "
+        >
+          <button class="control-button start-button" type="submit">
+            Start
+          </button>
+        </form>
+        <form
+          action="/stop"
+          method="post"
+          style="
+            display: inline-block;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+          "
+        >
+          <button class="control-button stop-button" type="submit">Stop</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

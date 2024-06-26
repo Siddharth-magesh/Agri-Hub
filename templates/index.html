@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Reset and global styles */
+      *,
+      *:before,
+      *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f9f2;
+        color: #333;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+
+      .flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; /* Space between items */
+        justify-content: center;
+        margin-top: 10%;
+      }
+
+      .card {
+        flex: 1 1 calc(33.333% - 20px); /* Flex basis and gap adjustment */
+        border: 2px solid rgba(128, 128, 128, 0.5);
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        max-width: 350px; /* Restrict max width */
+        margin: 10px; /* Margin for spacing */
+      }
+      .card:hover {
+        transform: scale(1.1);
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+      }
+      .card a {
+        text-decoration: none;
+      }
+      .card button {
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+        font-size: 24px;
+        color: #34d399;
+        text-align: center;
+        background-color: #fff;
+        border: none;
+        cursor: pointer;
+        border-top: 1px solid #ddd;
+        transition: background-color 0.3s;
+      }
+
+      .card button:hover {
+        background-color: #f0f0f0;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+      h4 {
+        font-size: 50px; /* Font size */
+        color: #30a54a; /* Text color */
+        font-weight: bold; /* Bold text */
+        margin: 10px 0; /* Vertical margins */
+        text-align: center; /* Center alignment */
+      }
+    </style>
+  </head>
+  <body>
+    <h4>AgriBot</h4>
+    <section>
+      <div class="container">
+        <div class="flex justify-center">
+          <div class="card">
+            <img src="\static\images\farmer.png" alt="Farmer" />
+            <a href="{{ url_for('farmerlogin') }}">
+              <button>FARMER</button>
+            </a>
+          </div>
+          <div class="card">
+            <img
+              src="\static\images\Screenshot 2024-06-20 220408.png"
+              alt="Buyer"
+            />
+            <a href="{{ url_for('buyerlogin') }}">
+              <button>BUYER</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Display</title>
+    <style>
+      /* Resetting default margins and paddings */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #f5c6aa;
+      }
+
+      /* Basic styling for the entire section */
+      .products {
+        font-family: Arial, sans-serif;
+        background-color: #f5c6aa;
+        padding: 20px 0; /* Vertical padding */
+      }
+
+      /* Container for centering content */
+      .container {
+        max-width: 1200px;
+        margin: 20px auto; /* Center align */
+        margin-top: 2%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      /* Styling for each product item */
+      .product {
+        width: 250px; /* Adjust width as needed */
+        margin: 20px; /* Margin between products */
+        padding: 15px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .product:hover {
+        transform: scale(1.1);
+      }
+
+      /* Styling for the product details section */
+      .product-details {
+        margin-top: 15px;
+      }
+
+      /* Category styling */
+      .category {
+        font-size: 12px;
+        color: #9ca3af; /* Light gray */
+        text-transform: uppercase;
+      }
+
+      /* Product title styling */
+      .product-title {
+        font-size: 18px;
+        color: #1f2937; /* Dark gray */
+        font-weight: bold;
+        margin-top: 5px;
+      }
+
+      /* Product description styling */
+      .product-description {
+        font-size: 14px;
+        color: #555555; /* Medium gray */
+        margin-top: 5px;
+      }
+
+      /* Product price styling */
+      .product-price {
+        font-size: 16px;
+        color: #4caf50; /* Green */
+        margin-top: 10px;
+      }
+      h1 {
+        font-size: 20px; /* Font size */
+        color: #171515; /* Text color */
+        font-weight: bold; /* Bold text */
+        margin: 10px 0; /* Vertical margins */
+        text-align: center; /* Center alignment */
+      }
+      h5 {
+        font-size: 50px; /* Font size */
+        color: #060606; /* Text color */
+        font-weight: bold; /* Bold text */
+        margin: 10px 0; /* Vertical margins */
+        text-align: center; /* Center alignment */
+      }
+      .linear-text-box {
+        background-color: #f0ebe3;
+        width: 100%; /* Full width */
+        max-width: 100%; /* Max width */
+        padding: 10px; /* Padding inside the text box */
+        margin: 20px 0; /* Vertical margin */
+        border: 1px solid #0b0b0b; /* Border */
+        border-radius: 5px; /* Rounded corners */
+        font-size: 16px; /* Font size */
+        outline: none; /* Remove outline on focus */
+        transition: border-color 0.3s ease; /* Smooth transition */
+      }
+
+      .linear-text-box:focus {
+        border-color: #4caf50; /* Change border color on focus */
+      }
+      .btn {
+        outline: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #40b3a2;
+        min-width: 200px;
+        border: 0;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        box-sizing: border-box;
+        padding: 16px 20px;
+        margin-left: 43%;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        overflow: hidden;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        opacity: 0.95;
+      }
+
+      .btn .animation {
+        border-radius: 100%;
+        animation: ripple 0.6s linear infinite;
+      }
+
+      @keyframes ripple {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1),
+            0 0 0 20px rgba(255, 255, 255, 0.1),
+            0 0 0 40px rgba(255, 255, 255, 0.1),
+            0 0 0 60px rgba(255, 255, 255, 0.1);
+        }
+
+        100% {
+          box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1),
+            0 0 0 40px rgba(255, 255, 255, 0.1),
+            0 0 0 60px rgba(255, 255, 255, 0.1),
+            0 0 0 80px rgba(255, 255, 255, 0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h5>Insurance</h5>
+    <div class="linear-text-box">
+      <h1>
+        Insurance is a legal contract between an insurance company and an
+        individual or business that provides financial protection against losses
+        from specific events or situations. The policyholder, or insured, pays
+        regular premiums to the insurer, who then pays out a predetermined
+        amount of coverage if an unfortunate event occurs
+      </h1>
+    </div>
+    <a href="{{url_for('insuranceformpage')}}">
+      <button class="btn">
+        <i class="animation"></i>Click Here To Apply<i class="animation"></i>
+      </button>
+    </a>
+    <section class="products">
+      <div class="container">
+        <!-- Crop Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">1. Crop Insurance</h2>
+            <p class="product-description">
+              Purpose: Protects against the loss of crops due to natural
+              disasters (e.g., drought, hail, floods) and price fluctuations.
+            </p>
+            <p class="product-description">Types:</p>
+            <p class="product-description">
+              Multi-Peril Crop Insurance (MPCI): Covers a broad range of risks,
+              including weather-related events and diseases.
+            </p>
+            <p class="product-description">
+              Crop-Hail Insurance: Specifically covers damage caused by hail.
+            </p>
+          </div>
+        </div>
+
+        <!-- Livestock Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">2. Livestock Insurance</h2>
+            <p class="product-description">
+              Purpose: Covers losses related to livestock due to accidents,
+              disease, theft, or natural disasters.
+            </p>
+            <p class="product-description">Types:</p>
+            <p class="product-description">
+              Individual Animal Coverage: Insures specific high-value animals.
+            </p>
+            <p class="product-description">
+              Herd Coverage: Insures groups of animals.
+            </p>
+          </div>
+        </div>
+
+        <!-- Farm Property Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">3. Farm Property Insurance</h2>
+            <p class="product-description">
+              Purpose: Protects buildings, machinery, and equipment on the farm
+              from risks such as fire, theft, vandalism, and certain weather
+              events.
+            </p>
+            <p class="product-description">Coverage:</p>
+            <p class="product-description">
+              Dwelling Coverage: Protects the farmer's home.
+            </p>
+            <p class="product-description">
+              Barns and Outbuildings Coverage: Covers structures like barns,
+              silos, and storage buildings.
+            </p>
+            <p class="product-description">
+              Equipment and Machinery Coverage: Insures tractors, harvesters,
+              and other farming equipment.
+            </p>
+          </div>
+        </div>
+
+        <!-- Farm Liability Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">4. Farm Liability Insurance</h2>
+            <p class="product-description">
+              Purpose: Protects against legal liability for injuries or damages
+              that occur on the farm.
+            </p>
+            <p class="product-description">Coverage:</p>
+            <p class="product-description">
+              General Liability: Covers bodily injury and property damage
+              claims.
+            </p>
+            <p class="product-description">
+              Product Liability: Protects against claims related to the sale of
+              farm products.
+            </p>
+          </div>
+        </div>
+
+        <!-- Farm Vehicle Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">5. Farm Vehicle Insurance</h2>
+            <p class="product-description">
+              Purpose: Covers vehicles used in farming operations, such as
+              trucks and trailers.
+            </p>
+            <p class="product-description">Coverage:</p>
+            <p class="product-description">
+              Collision Coverage: Covers damage from collisions.
+            </p>
+            <p class="product-description">
+              Comprehensive Coverage: Covers non-collision-related damage (e.g.,
+              theft, fire, hail).
+            </p>
+          </div>
+        </div>
+
+        <!-- Workers' Compensation Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">6. Workers' Compensation Insurance</h2>
+            <p class="product-description">
+              Purpose: Provides coverage for medical expenses and lost wages for
+              farm employees injured on the job.
+            </p>
+            <p class="product-description">
+              Requirements: Often mandated by law depending on the number of
+              employees and state regulations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Crop Revenue Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">7. Crop Revenue Insurance</h2>
+            <p class="product-description">
+              Purpose: Protects against a drop in crop revenue due to low prices
+              or reduced yields.
+            </p>
+            <p class="product-description">Types:</p>
+            <p class="product-description">
+              Revenue Protection (RP): Covers revenue losses due to price
+              fluctuations or yield drops.
+            </p>
+            <p class="product-description">
+              Revenue Protection with Harvest Price Exclusion (RP-HPE): Similar
+              to RP but excludes changes in the harvest price.
+            </p>
+          </div>
+        </div>
+
+        <!-- Umbrella Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">8. Umbrella Insurance</h2>
+            <p class="product-description">
+              Purpose: Provides additional liability coverage beyond standard
+              policies.
+            </p>
+            <p class="product-description">
+              Coverage: Extends the liability limits of underlying policies like
+              general liability and vehicle insurance.
+            </p>
+          </div>
+        </div>
+
+        <!-- Business Interruption Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">9. Business Interruption Insurance</h2>
+            <p class="product-description">
+              Purpose: Covers lost income and operating expenses if the farm
+              operation is halted due to a covered event.
+            </p>
+            <p class="product-description">
+              Coverage: Compensates for revenue losses and ongoing expenses
+              during the interruption period.
+            </p>
+          </div>
+        </div>
+
+        <!-- Specialty Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">10. Specialty Insurance</h2>
+            <p class="product-description">Types:</p>
+            <p class="product-description">
+              Organic Farming Insurance: Tailored coverage for organic farming
+              practices.
+            </p>
+            <p class="product-description">
+              Agritourism Insurance: Protects against liabilities associated
+              with on-farm tourism activities (e.g., farm tours, corn mazes).
+            </p>
+            <p class="product-description">
+              Equine Insurance: Specific coverage for horse farms and related
+              activities.
+            </p>
+          </div>
+        </div>
+
+        <!-- Environmental Liability Insurance -->
+        <div class="product">
+          <div class="product-details">
+            <h2 class="product-title">11. Environmental Liability Insurance</h2>
+            <p class="product-description">
+              Purpose: Protects against claims related to pollution or
+              environmental damage caused by farming activities.
+            </p>
+            <p class="product-description">
+              Coverage: Legal defense costs, cleanup costs, and damages.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

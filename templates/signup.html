@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detailed Information Form</title>
+    <style>
+      *,
+      *:before,
+      *:after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #f7f9f2;
+        font-family: "Poppins", sans-serif;
+      }
+      .background {
+        width: 430px;
+        height: 520px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+      }
+      .background .shape {
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        border-radius: 50%;
+      }
+      .shape:first-child {
+        background: linear-gradient(#1845ad, #23a2f6);
+        left: -80px;
+        top: -80px;
+      }
+      .shape:last-child {
+        background: linear-gradient(to right, #ff512f, #f09819);
+        right: -30px;
+        bottom: -80px;
+      }
+      form {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(18, 215, 97, 0.13);
+        padding: 50px 35px;
+        overflow-y: auto;
+      }
+      form * {
+        font-family: "Poppins", sans-serif;
+        color: #0c0b0b;
+        letter-spacing: 0.5px;
+        outline: none;
+        border: none;
+      }
+      form h3 {
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 42px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      label {
+        display: block;
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      input,
+      select {
+        display: block;
+        height: 50px;
+        width: calc(100% - 20px);
+        background-color: rgb(245, 243, 243);
+        border-radius: 3px;
+        padding: 0 10px;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 300;
+      }
+      ::placeholder {
+        color: #110d0d;
+      }
+      .checkbox-container {
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+      }
+      .checkbox-container input[type="radio"] {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+      }
+      button {
+        margin-top: 30px;
+        width: 100%;
+        background-color: #13f547;
+        color: #080710;
+        padding: 15px 0;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .icon-label {
+        display: flex;
+        align-items: center;
+      }
+      .icon-label svg {
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="{{ url_for('signupprocessbuyer') }}" method="post">
+      <h3>Personal Information Form</h3>
+
+      <label for="fname">First Name</label>
+      <input
+        type="text"
+        id="fname"
+        name="fname"
+        placeholder="First Name"
+        required
+      />
+
+      <label for="lname">Last Name</label>
+      <input
+        type="text"
+        id="lname"
+        name="lname"
+        placeholder="Last Name"
+        required
+      />
+
+      <label>Gender</label>
+      <div class="checkbox-container">
+        <input type="radio" id="male" name="gender" value="male" required />
+        <label for="male">Male</label>
+      </div>
+      <div class="checkbox-container">
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label>
+      </div>
+      <div class="checkbox-container">
+        <input type="radio" id="other" name="gender" value="other" />
+        <label for="other">Other</label>
+      </div>
+
+      <label for="age" class="icon-label"> Age </label>
+      <input type="number" id="age" name="age" placeholder="Age" required />
+
+      <label for="dob" class="icon-label"> Date of Birth </label>
+      <input type="date" id="dob" name="dob" required />
+
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Email"
+        required
+      />
+
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Password"
+        required
+      />
+
+      <label for="confirm_password">Confirm Password</label>
+      <input
+        type="password"
+        id="confirm_password"
+        name="confirm_password"
+        placeholder="Confirm Password"
+        required
+      />
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

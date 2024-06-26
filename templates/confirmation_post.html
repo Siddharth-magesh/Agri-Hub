@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Confirmation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f9f9f9;
+      }
+      .product-box {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px 0;
+        width: 250px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .product-box form {
+        display: flex;
+        flex-direction: column;
+      }
+      .product-box label {
+        margin-bottom: 3px;
+        font-weight: bold;
+        font-size: 12px;
+      }
+      .product-box input {
+        margin-bottom: 8px;
+        padding: 6px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        font-size: 12px;
+      }
+      .success-message {
+        background-color: #dff0d8;
+        color: #3c763d;
+        border: 1px solid #d6e9c6;
+        border-radius: 5px;
+        padding: 15px;
+        margin-top: 20px;
+        text-align: center;
+        width: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="product-box">
+      <form>
+        <label for="productName1">Product Name</label>
+        <input
+          type="text"
+          id="productName1"
+          name="productName1"
+          value="{{ product_name }}"
+          readonly
+        />
+
+        <label for="quantity1">Quantity</label>
+        <input
+          type="number"
+          id="quantity1"
+          name="quantity1"
+          value="{{ quantity }}"
+          readonly
+        />
+
+        <label for="price1">Price</label>
+        <input
+          type="number"
+          id="price1"
+          name="price1"
+          value="{{ price }}"
+          readonly
+        />
+
+        <label for="locality1">Locality</label>
+        <input
+          type="text"
+          id="locality1"
+          name="locality1"
+          value="{{ address }}"
+          readonly
+        />
+
+        <label for="farmerId1">Farmer ID</label>
+        <input
+          type="text"
+          id="farmerId1"
+          name="farmerId1"
+          value="{{ unique_id }}"
+          readonly
+        />
+      </form>
+    </div>
+
+    <div class="success-message">Your product has been posted successfully</div>
+  </body>
+</html>

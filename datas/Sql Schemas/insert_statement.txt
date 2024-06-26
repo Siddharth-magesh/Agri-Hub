@@ -1,0 +1,176 @@
+INSERT INTO seed (name, type, sellername, quantity, price)
+VALUES
+    ('Wheat', 'Grain', 'John Doe', 1, 22.7),
+    ('Barley', 'Grain', 'Jane Smith', 1, 18.5),
+    ('Gram', 'Pulse', 'Jim Brown', 1, 54.4),
+    ('Lentil', 'Pulse', 'Emma Davis', 1, 64.2),
+    ('Mustard', 'Oilseed', 'Michael Wilson', 1, 61.7),
+    ('Paddy', 'Grain', 'Sarah Johnson', 1, 20.4),
+    ('Maize', 'Grain', 'Robert White', 1, 21.2),
+    ('Cotton', 'Fiber', 'David Lee', 1, 60.2),
+    ('Groundnut', 'Oilseed', 'Laura King', 1, 58.5),
+    ('Sunflower Sds', 'Oilseed', 'James Allen', 1, 62.0),
+    ('Soybeans', 'Oilseed', 'Nancy Scott', 1, 46.0),
+    ('Safflower', 'Oilseed', 'Paul Young', 1, 56.5),
+    ('Pigeon Pea', 'Pulse', 'Karen Baker', 1, 66.0),
+    ('Black Gram', 'Pulse', 'Andrew Harris', 1, 69.5),
+    ('Green Gram', 'Pulse', 'Betty Clark', 1, 77.5),
+    ('Castor Seed', 'Oilseed', 'Charles Martinez', 1, 56.8),
+    ('Cumin Seed', 'Spice', 'Margaret Lewis', 1, 67.0),
+    ('Fennel Seed', 'Spice', 'Steven Walker', 1, 64.0),
+    ('Sesame Seed', 'Oilseed', 'Linda Hall', 1, 29.7);
+
+
+
+
+
+
+INSERT INTO machinery (name, sellername, price, quantity)
+VALUES
+    ('Tractors', 'Mahindra & Mahindra', 620000, 1),
+    ('Farm Equipment', 'Mahindra & Mahindra', 620000, 1),
+    ('Tractors', 'John Deere India', 875000, 1),
+    ('Harvesters', 'John Deere India', 875000, 1),
+    ('Tractors', 'Escorts Group', 720000, 1),
+    ('Material Handling Equipment', 'Escorts Group', 720000, 1),
+    ('Tractors', 'TAFE (Tractors and Farm Equipment Limited)', 790000, 1),
+    ('Tractors', 'Sonalika International Tractors Ltd', 460000, 1),
+    ('Farm Equipment', 'Sonalika International Tractors Ltd', 460000, 1),
+    ('Tractors', 'New Holland Agriculture', 930000, 1),
+    ('Harvesters', 'New Holland Agriculture', 930000, 1),
+    ('Balers', 'New Holland Agriculture', 930000, 1),
+    ('Tractors', 'Swaraj Tractors', 383000, 1),
+    ('Tractors', 'Force Motors', 533000, 1),
+    ('Farm Equipment', 'Force Motors', 533000, 1),
+    ('Tractors', 'Kubota Agricultural Machinery India', 700000, 1),
+    ('Rice Transplanters', 'Kubota Agricultural Machinery India', 700000, 1),
+    ('Compact Tractors', 'VST Tillers Tractors', 960000, 1),
+    ('Power Tillers', 'VST Tillers Tractors', 960000, 1),
+    ('Sprayers', 'Hymark Agritech Pvt. Ltd.', 115000, 1),
+    ('Brush Cutters', 'Hymark Agritech Pvt. Ltd.', 115000, 1),
+    ('Dairy Equipment including Milking Machines', 'Milking Machine', 140000, 1),
+    ('Milk Coolers', 'Milking Machine', 140000, 1),
+    ('Dairy Equipment including Milking Machines', 'VieMilk Engineering', 250000, 1),
+    ('Milk Containers', 'VieMilk Engineering', 250000, 1),
+    ('Fogging Machines', 'Farmer Friends Agriculture', 230000, 1),
+    ('Water Pumps', 'Farmer Friends Agriculture', 230000, 1),
+    ('Hydraulic Excavators', 'Agrovision Farm Equipment', 1900000, 1),
+    ('Cranes', 'Agrovision Farm Equipment', 1900000, 1),
+    ('Earthmoving Equipment', 'Shiram EPC Limited', 2200000, 1),
+    ('Material Handling Machinery', 'Shiram EPC Limited', 2200000, 1),
+    ('Hydraulic Excavators', 'Kobelco Construction Equipment India Pvt. Ltd.', 2140000, 1),
+    ('Cranes', 'Kobelco Construction Equipment India Pvt. Ltd.', 2140000, 1),
+    ('Trucks', 'Ashok Leyland', 1500000, 1),
+    ('Specialized Agricultural Vehicles', 'Ashok Leyland', 1500000, 1),
+    ('Tractors', 'Hyundai Construction Equipment India Limited', 5600000, 1),
+    ('Farm Equipment', 'Hyundai Construction Equipment India Limited', 5600000, 1);
+
+
+
+
+
+
+
+
+
+INSERT INTO fertilizer (name, sellername, usedfor, quantity, price)
+VALUES
+    ('Urea', 'Rashtriya Chemicals & Fertilizers', 'Nitrogen source for crops', 50, 270),
+    ('Di-Ammonium Phosphate', 'Indian Farmers Fertiliser Cooperative', 'Phosphorus source for crops', 50, 1200),
+    ('Muriate of Potash', 'Gujarat State Fertilizers & Chemicals', 'Potassium source for crops', 50, 450),
+    ('Single Super Phosphate', 'Coromandel International', 'Phosphorus source for crops', 50, 320),
+    ('Complex Fertilizers', 'National Fertilizers Limited', 'Balanced fertilizer for crops', 50, 1300),
+    ('Ammonium Sulphate', 'Chambal Fertilizers and Chemicals', 'Nitrogen source for crops', 50, 600),
+    ('Calcium Ammonium Nitrate', 'Tata Chemicals', 'Calcium source for crops', 50, 500),
+    ('Zinc Sulphate', 'Fertilizers and Chemicals Travancore', 'Zinc source for crops', 50, 600),
+    ('Gypsum', 'Nagarjuna Fertilizers and Chemicals', 'Soil conditioning', 50, 80),
+    ('Magnesium Sulphate', 'Paradeep Phosphates', 'Magnesium source for crops', 50, 600);
+
+
+
+
+
+
+
+
+
+INSERT INTO cattle (name, sellername, price, quantity, locality)
+VALUES 
+    ('Cattle', 'National Livestock Sellers', 130000, 1, 'Chennai'),
+    ('Goats', 'Mountain Ranch', 10500, 1, 'Coimbatore'),
+    ('Sheep', 'Valley Sheep Farm', 10000, 1, 'Madurai'),
+    ('Pigs', 'Happy Farms', 8000, 1, 'Tiruchirappalli'),
+    ('Poultry', 'Sunrise Poultry', 225, 1, 'Salem');
+
+
+
+
+
+
+INSERT INTO rental (name, price, sellername) VALUES
+('Small Tractors', 650, 'John'),
+('Medium Tractors', 1000, 'Mark'),
+('Large Tractors', 1600, 'Stephen'),
+('Mini Combine Harvester', 2500, 'Billy' ),
+('Small Combine Harvester', 4000, 'Antony'),
+('Large Combine Harvester', 6500, 'Arjun'),
+('Plough', 300, 'Siddharth'),
+('Disc Harrow', 400, 'Pranesh '),
+('Cultivator', 300, 'Waatson'),
+('Rotavator', 500, 'Udhay'),
+('Seed Drill', 400, 'kumar'),
+('Transplanter', 650, 'saravanan'),
+('Drip Irrigation System', 1000, 'kaushik'),
+('Sprinkler Irrigation System', 650, 'Loki');
+
+
+
+
+INSERT INTO purchase_history (product, quantity, dateofpurchase, price, insurancepolicyname, insuranceduration, insuranceissuancedate, insuranceamount, loanname, loanamount, loanduration, loanissuancedate)
+VALUES
+    ('Tractor', 1, '05-01-23', 700000, 'Comprehensive Insurance', '1 year', '01-01-23', 100000, 'Farm Equipment Loan', 500000, '5 years', '01-01-23'),
+    ('Disc Harrow', 1, '15-01-23', 150000, 'Third Party Liability', '6 months', '01-02-23', 50000, 'Agricultural Loan', 100000, '3 years', '01-02-23'),
+    ('Sprayer', 2, '10-03-23', 60000, 'Crop Insurance', '9 months', '01-03-23', 30000, 'Equipment Financing', 40000, '2 years', '01-03-23'),
+    ('Rice Transplanter', 1, '03-05-23', 450000, 'Equipment Protection Plan', '2 years', '01-04-23', 150000, 'Business Expansion Loan', 300000, '4 years', '01-04-23'),
+    ('Power Tiler', 1, '20-05-23', 200000, 'Equipment Warranty', '1 year', '01-05-23', 80000, 'Personal Loan', 150000, '3 years', '01-05-23'),
+    ('Harvester', 1, '18-08-23', 1200000, 'Full Coverage Insurance', '3 years', '01-06-23', 200000, 'Machinery Loan', 800000, '5 years', '01-06-23'),
+    ('Milking Machine', 2, '07-10-23', 200000, 'Livestock Insurance', '1 year', '01-07-23', 60000, 'Equipment Lease', 120000, '2 years', '01-07-23'),
+    ('Milk Cooler', 1, '25-10-23', 175000, 'Cooling Equipment Insurance', '6 months', '01-08-23', 40000, 'Working Capital Loan', 100000, '1 year', '01-08-23'),
+    ('Brush Cutter', 3, '02-12-23', 75000, 'Tool Protection Plan', '1 year', '01-09-23', 20000, 'Small Business Loan', 50000, '1.5 years', '01-09-23'),
+    ('Fogging Machine', 1, '15-12-23', 80000, 'Pest Control Equipment Insurance', '9 months', '01-10-23', 35000, 'Startup Loan', 70000, '2 years', '01-10-23'),
+    ('Hydraulic Excavator', 1, '08-02-24', 2000000, 'Heavy Machinery Insurance', '5 years', '01-11-23', 300000, 'Expansion Loan', 1500000, '7 years', '01-11-23'),
+    ('Water Pump', 2, '22-02-24', 100000, 'Irrigation Equipment Insurance', '2 years', '01-12-23', 50000, 'Agribusiness Loan', 80000, '3 years', '01-12-23');
+
+
+
+
+INSERT INTO farmer1 (name, age, dateofbirth, unique_id, blood_group, gender, state, pincode, address, email)
+VALUES
+    ('Rajesh Kumar', 45, '15th March 1979', '123456789', 'O+', 'M', 'Bihar', 800001, '123, ABC Road, Patna', 'rajeshkumar@example.com'),
+    ('Sunita Devi', 35, '5th June 1989', '987654321', 'B-', 'F', 'Uttar Pradesh', 200001, '456, XYZ Road, Lucknow', 'sunitadevi@example.com'),
+    ('Ramesh Singh', 50, '10th July 1974', '543216789', 'A+', 'M', 'Punjab', 300001, '789, LMN Road, Chandigarh', 'rameshsingh@example.com');
+
+
+
+
+
+INSERT INTO insurance (insurancetype, insurancepolicyname, duration, companyname, amount)
+VALUES 
+    ('Life Insurance', 'Term Life Insurance', '10-30 years', 'Life Insurance Company', 'Varies based on policy'),
+    ('Health Insurance', 'Mediclaim Insurance', 'Annual, renewable', 'Health Insurance Provider', 'Varies based on policy'),
+    ('Motor Insurance', 'Vehicle Insurance', '1 year, renewable', 'Motor Insurance Company', 'Varies based on vehicle value'),
+    ('Home Insurance', 'Home Insurance', '1 year, renewable', 'Home Insurance Company', 'Varies based on property value'),
+    ('Crop Insurance', 'Pradhan Mantri Fasal Bima Yojana (PMFBY)', 'Seasonal', 'Crop Insurance Provider', 'Coverage of crop losses'),
+    ('Travel Insurance', 'Travel Insurance', 'varies', 'Travel Insurance Company', 'Varies based on coverage');
+
+
+
+
+
+			
+
+
+
+
+	
+		

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Resetting default margins and paddings */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Basic styling for the entire page */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        display: flex;
+      }
+
+      /* Styling for the products section */
+      .products {
+        flex: 0 0 75%; /* Products section takes 75% of container width */
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .product {
+        width: calc(33.33% - 20px); /* Adjust width */
+        margin: 0 20px 20px 0;
+        padding: 15px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-image {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .product-image img {
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .product-details {
+        text-align: center;
+      }
+
+      .product-title {
+        font-size: 18px;
+        color: #1f2937; /* Dark gray */
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .product-category {
+        font-size: 14px;
+        color: #9ca3af; /* Light gray */
+        margin-bottom: 5px;
+      }
+
+      .product-price {
+        font-size: 16px;
+        color: #4caf50; /* Green */
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .product-description {
+        font-size: 14px;
+        color: #555555;
+      }
+      .btn:link,
+      .btn:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: rgb(28, 164, 103);
+        padding: 10px 30px;
+        border: 1px solid;
+        border-radius: 1000px;
+        display: inline-block;
+        transition: all 0.2s;
+        position: relative;
+      }
+
+      .btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(27, 27, 27, 0.5);
+      }
+
+      .btn:active {
+        transform: translateY(-3px);
+      }
+
+      .btn::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: -1;
+        transition: all 0.3s;
+      }
+
+      .btn:hover::after {
+        background-color: rgb(0, 238, 255);
+        transform: scaleX(1.4) scaleY(1.5);
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="products">
+      <div class="product">
+        <div class="product-image">
+          <img src="\static\images\Dashboard.jpg" alt="Product Image" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">Dashboard</h3>
+          <p class="product-category">Category : Dashboard</p>
+          <a href="{{ url_for('dashboardpage') }}" class="btn">Click Me</a>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-image">
+          <img src="\static\images\Communication.jpg" alt="Product Image" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">Communication Page</h3>
+          <p class="product-category">Category: Communication</p>
+          <a href="{{ url_for('communicationpage') }}" class="btn">Click Me</a>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-image">
+          <img src="\static\images\Store.png" alt="Product Image" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">Store Page</h3>
+          <p class="product-category">Category: Store</p>
+          <a href="{{ url_for('storepage') }}" class="btn">Click Me</a>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-image">
+          <img src="\static\images\Selling.jpg" alt="Product Image" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">Selling Page</h3>
+          <p class="product-category">Category: Selling</p>
+          <a href="{{ url_for('sellingpage') }}" class="btn">Click Me</a>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-image">
+          <img src="\static\images\Financial.jpg" alt="Product Image" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">Financial Page</h3>
+          <p class="product-category">Category: Financial</p>
+          <a href="{{ url_for('financialpage') }}" class="btn">Click Me</a>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-image">
+          <img src="\static\images\Chatbot.png" alt="Product Image" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">Chatbot Page</h3>
+          <p class="product-category">Category: Chatbot</p>
+          <a href="{{ url_for('chatbotpage') }}" class="btn">Click Me</a>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-image">
+          <img src="\static\images\Computer Vision.png" alt="Product Image" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">Computer Vision Page</h3>
+          <p class="product-category">Category: Computer Vision</p>
+          <a href="{{ url_for('cvpage') }}" class="btn">Click Me</a>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-image">
+          <img src="\static\images\News.png" alt="Product Image" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">News Page</h3>
+          <p class="product-category">Category: news</p>
+          <a href="{{ url_for('newspage') }}" class="btn">Click Me</a>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-image">
+          <img src="\static\images\quickfarm.jpg" alt="Product Image" />
+        </div>
+        <div class="product-details">
+          <h3 class="product-title">Quick Farm</h3>
+          <p class="product-category">Category: Quick Start</p>
+          <a href="{{ url_for('quickstartpage') }}" class="btn">Click Me</a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

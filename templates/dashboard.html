@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .dashboard {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .left-sidebar {
+            flex: 1;
+            width: 25%; /* 25% width for profile section */
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile-section {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            /* Sample background color */
+            background-color: #ccc;
+            /* Placeholder image */
+            background-image: url('https://cdn-icons-png.freepik.com/256/8986/8986220.png?semt=ais_hybrid');
+            background-size: cover;
+        }
+        .edit-profile {
+            margin-top: 10px;
+            margin-right: 250px; /* Fixed typo */
+        }
+        .land-details {
+            width: 100%;
+            margin-top: 5px; /* Fixed typo */
+        }
+        .right-sidebar {
+            flex: 3; /* Adjusted width for right sidebar */
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-left: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border:  1px solid #ddd;
+        }
+        .details-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .details-item {
+            margin-bottom: 5px;
+        }
+        .details-group {
+            width: 100%;
+            margin-top: 20px; /* Added margin top */
+            margin-bottom: 20px; /* Added margin bottom */
+            padding-right: 20%; /* Adjusted padding */
+            border: 1px solid #ddd; /* Added border for clarity */
+        }
+        .details-group:last-child {
+            margin-bottom: 0; /* Remove bottom margin for the last group */
+        }
+        .details-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd; /* Added border bottom */
+        }
+        .details-row:last-child {
+            border-bottom: none; /* Remove bottom border for the last row */
+        }
+        .details-label {
+            flex: 1;
+            font-weight: bold;
+        }
+        .details-value {
+            flex: 2;
+        }
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-top: 20px; /* Added margin top */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .progress-container {
+            margin-top: 20px; /* Added margin top */
+        }
+        .progress-bar {
+            background-color: #f1f1f1;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 20px; /* Added margin top */
+        }
+        .progress-bar-inner {
+            background-color: #4CAF50;
+            text-align: center;
+            color: white;
+            height: 20px;
+            line-height: 20px;
+        }
+        .progress-bar-large {
+            border-radius: 8px;
+        }
+        .progress-bar-xlarge {
+            border-radius: 12px;
+        }
+        .icon-container {
+            position: absolute;
+            top: 70px;
+            right: 60px;
+        }
+        .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #e6e9e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="left-sidebar">
+            <div class="profile-section">
+                <div class="profile-pic"></div>
+                <button class="edit-profile">Edit Profile</button>
+            </div>
+            <div class="land-details">
+                <div class="section-title" style="border: none;">Farmer's Land Details</div>
+                <ul class="details-list">
+                    <li class="details-item">Land Area: 10 acres</li>
+                    <li class="details-item">Crop Type: Cotton</li>
+                    <li class="details-item">Location: Pudukkottai</li>
+                    <li class="details-item">Fertilizer Name: Ammonium Sulphate</li>
+                    <li class="details-item">Fertilizer Company Name: Premium fertilizers limited</li>
+                    <li class="details-item">Fertilizer Type: Pest</li>
+                    <li class="details-item">Labour Used: 6</li>
+                    <li class="details-item">Equipment Name: Tractor</li>
+                    <li class="details-item">Equipment Quantity: 4</li>
+                </ul>
+            </div>
+            <div style="padding-right:130px;">
+                <div class="section-title"style="border: none;">Animal Husbandry Details</div>
+                <ul class="details-list">
+                    <li class="details-item">Number of Cows: 8</li>
+                    <li class="details-item">Number of Chickens: 15</li>
+                    <li class="details-item">Animal Health: Good</li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-sidebar">
+            <div class="details-group">
+                <div class="section-title">Personal Details</div>
+                <div class="details-row">
+                    <div class="details-label">Name:</div>
+                    <div class="details-value">MuthuPandi</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Age:</div>
+                    <div class="details-value">45</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Contact:</div>
+                    <div class="details-value">8072657456</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Email:</div>
+                    <div class="details-value">madurairowdy@gmail.com</div>
+                </div>
+            </div>
+            <div class="details-group">
+                <div class="section-title">Address</div>
+                <div class="details-row">
+                    <div class="details-label">Address Line 1:</div>
+                    <div class="details-value">no.69, A11 nagar, 12th Street, West Kings Road </div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Address Line 2:</div>
+                    <div class="details-value">Near Mount Zion School</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">City:</div>
+                    <div class="details-value">Coimbatore</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">State:</div>
+                    <div class="details-value">TamilNadu</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Country:</div>
+                    <div class="details-value">India</div>
+                </div>
+            </div>
+            <div class="details-group">
+                <div class="section-title">Financial Details</div>
+                <div class="details-row">
+                    <div class="details-label">Loan ID:</div>
+                    <div class="details-value">13564</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">User ID:</div>
+                    <div class="details-value">08679</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Loan Type:</div>
+                    <div class="details-value">25000</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Loan Amount:</div>
+                    <div class="details-value">100000</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Interest Rate:</div>
+                    <div class="details-value">2.5</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Loan Term:</div>
+                    <div class="details-value">10 years</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Application Date:</div>
+                    <div class="details-value">16th June 2018</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Approval Date:</div>
+                    <div class="details-value">25th June 2018</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Loan Status:</div>
+                    <div class="details-value">Finished</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Repayment Schedule:</div>
+                    <div class="details-value">50000</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Expiration Date:</div>
+                    <div class="details-value">31st December 2025</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Loan Policy Status:</div>
+                    <div class="details-value">Approved</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Net Profit:</div>
+                    <div class="details-value">1500000</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Insurance Type:</div>
+                    <div class="details-value">Crop</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Coverage Amount:</div>
+                    <div class="details-value">50000</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Insurance Policy Term:</div>
+                    <div class="details-value">6 months</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Insurance Policy ID:</div>
+                    <div class="details-value">08697</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Issuance Date:</div>
+                    <div class="details-value">16th June 2020</div>
+                </div>
+                <div class="details-row">
+                    <div class="details-label">Coverage details:</div>
+                    <div class="details-value">75000</div>
+                </div>
+            </div>
+            
+            <div class="details-group">
+                <div class="section-title">Purchase History</div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>wheat</td>
+                                <td>500</td>
+                                <td>20Kg</td>
+                            </tr>
+                            <tr>
+                                <td>Tractor</td>
+                                <td>700000</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Urea</td>
+                                <td>715</td>
+                                <td>3kg</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="progress-container">
+                <div class="section-title">Progress</div>
+                <div class="progress-bar progress-bar-xlarge">
+                    <div class="progress-bar-inner" style="width: 25%">25%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

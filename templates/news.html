@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insta-like Agriculture Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .container {
+        display: flex;
+        width: 100%;
+        max-width: 1200px;
+        box-sizing: border-box;
+      }
+      .left-sidebar,
+      .right-sidebar {
+        width: 25%;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #fff;
+        height: 100vh;
+        overflow-y: auto;
+      }
+      .center-column {
+        width: 50%;
+        padding: 20px;
+        box-sizing: border-box;
+        height: 100vh;
+        overflow-y: auto;
+      }
+      .post-box {
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .post-box img {
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+      .post-description {
+        padding: 10px;
+        background-color: #f2f2f2;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+      .sidebar-section {
+        margin-bottom: 20px;
+      }
+      .sidebar-section h3 {
+        margin: 0 0 10px 0;
+      }
+      .calendar {
+        margin-bottom: 20px;
+      }
+      .calendar img {
+        width: 100%;
+      }
+      .add-post-btn {
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .add-post-btn:hover {
+        background-color: #0056b3;
+      }
+      .news-sources {
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .news-sources h3 {
+        margin: 0 0 10px 0;
+      }
+      .crop-prices {
+        background-color: #fff;
+        padding: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .crop-prices table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .crop-prices th,
+      .crop-prices td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Left Sidebar -->
+      <div class="left-sidebar">
+        <div class="sidebar-section">
+          <img
+            src="\static\images\maps.png"
+            alt="User Avatar"
+            style="border-radius: 50%; width: 100%"
+          />
+          <ul>
+            <li>Temperature: 38</li>
+            <li>Moisture</li>
+            <li>Humidity</li>
+            <li>Mist</li>
+            <li>Windflow</li>
+            <li>Expected Rain</li>
+          </ul>
+        </div>
+        <div class="calendar">
+          <h3>Calendar</h3>
+          <img
+            src="\static\images\Screenshot 2024-06-21 124656.png"
+            alt="Calendar"
+          />
+        </div>
+        <button class="add-post-btn">Add Post</button>
+      </div>
+
+      <!-- Center Column -->
+      <div class="center-column">
+        <div class="post-box">
+          <img
+            src="\static\images\As farmers protest, India must urgently deal with its water crisis.jpg"
+            alt="Post Image"
+          />
+          <div class="post-description">
+            <p>
+              Indian farmers are pushing for the legalisation of an historic
+              pricing mechanism that built India’s food security, but the
+              problems they face demand far more As farmers once again protest
+              in India – three years on from the biggest peaceful civil society
+              protest in the world – it is worth remembering that agriculture
+              was also a critical issue for the nation in its first decades. The
+              country’s first prime minister, Jawaharlal Nehru, bluntly stated
+              that “everything can wait, but not agriculture.” This line of
+              thinking eventually led to the Green Revolution of the late 1960s,
+              forging India’s food security and providing much-needed revenue
+              for some of its farmers. But back in the present, a looming water
+              crisis has returned Indian agriculture to the spotlight.
+            </p>
+          </div>
+        </div>
+        <div class="post-box">
+          <img
+            src="\static\images\Farmers in India are hit hard by extreme weather.webp"
+            alt="Post Image"
+          />
+          <div class="post-description">
+            <p>
+              There’s a pungent odor on Ratna Raju’s farm that he says is
+              protecting his crops from the unpredictable and extreme weather
+              that’s become more frequent with human-caused climate change. The
+              smell comes from a concoction of cow urine, an unrefined sugar
+              known as jaggery, and other organic materials that act as
+              fertilizers, pesticides and bad weather barriers for his corn,
+              rice, leafy greens and other vegetables on his farm in Guntur in
+              India’s southern Andhra Pradesh state. The region is frequently
+              hit by cyclones and extreme heat, and farmers say that so-called
+              natural farming protects their crops because the soil can hold
+              more water, and their more robust roots help the plants withstand
+              strong winds.
+            </p>
+          </div>
+        </div>
+        <div class="post-box">
+          <img
+            src="\static\images\We are creating new crops five-times faster.webp"
+            alt="Post Image"
+          />
+          <div class="post-description">
+            <p>
+              Weather and the climate are maybe the number one risk to our
+              company,” says the boss of our Country flour firm Shepherd’s
+              Grain. Based in Idaho, the business sources wheat from farmers
+              across the US Pacific northwest. As weather patterns become more
+              unpredictable, Mr Bunch says: “I need to have a plan B, and plan
+              C, in case plan A fails.” To help strengthen these plans, Mr
+              Bunch’s company is now using an AI-powered software system called
+              ClimateAi. Using current and past data, such as from satellite
+              imagery and temperature and rainfall readings, and combining that
+              with future projections, ClimateAi aims to give farmers the most
+              accurate possible, locally-tailored weather forecasts, from one
+              hour to six months ahead. It then advises on exactly when to plant
+              and harvest particular crops, and predicts their yields.
+              Shepherd’s Grain only started using ClimateAi last year, but
+              already most of its 40 plus farmers are now being guided by the
+              app. “They’re beginning to look at ClimateAi to help them plan for
+              crop management decisions in their wheat crops, the primary crop
+              grown in the region,” says Mr Bunch. “A forward look at the
+              weather helps our growers decide which crops to plant. The
+              platform knows when to plant, and when the crop will start
+              flowering and producing seed.” One of the biggest problems facing
+              the seed industry is how to launch climate resilient seeds to
+              market faster and cheaper, says Himanshu Gupta, chief executive of
+              San Francisco-based ClimateAi. “By the time some seed companies do
+              this, in say 10 to 15 years, the climate has already changed,”
+              says Mr Gupta. “We are running against time to launch new seed
+              varieties.” He says that ClimateAi helps these firms to see how
+              specific test seeds have performed in a particular region or
+              locality. “This can help seed companies figure out the optimal
+              locations for growing seeds.”
+            </p>
+          </div>
+        </div>
+        <div class="post-box">
+          <img
+            src="\static\images\What The Government Promised But Failed To Deliver To India Farmers.jpg"
+            alt="Post Image"
+          />
+          <div class="post-description">
+            <p>
+              According to the report, the government made no progress on
+              several manifesto points regarding farmers’ welfare. These include
+              a promise to offer short-term new agricultural loans (Kisan Credit
+              Card or KCC loans) up to Rs 1 lakh at a 0% interest rate for one
+              to five years. While the announcement of such a scheme was
+              anticipated before the union budget presentation in 2019, and
+              though fact-checkers found fake newspaper articles claiming that
+              such a scheme was set to be launched, the Kisan Credit Card
+              scheme, launched in the late 1990s, has had interest subventions,
+              very low interest rates, and a rise in outstanding loans extended
+              by banks through the KCC, but no loans at a 0% interest rate.
+            </p>
+          </div>
+        </div>
+        <div class="post-box">
+          <img
+            src="\static\images\Why Indian agriculture may need a new export-import policy.webp"
+            alt="Post Image"
+          />
+          <div class="post-description">
+            <p>
+              Curbs on rice, wheat, sugar and onion shipments have taken a toll
+              on India’s farm exports in the fiscal ended, after a
+              record-breaking performance in 2022-23 India’s agricultural
+              exports fell 8.2% in the fiscal year ended March 31, 2024 on the
+              back of shipment curbs on a host of commodities, from cereals and
+              sugar to onions. The value of farm exports totaled $48.82 billion
+              in 2023-24, down from the record $53.15 billion of 2022-23 and
+              $50.24 billion for the previous fiscal, according to Department of
+              Commerce data. Exports declined during the initial years of the
+              Narendra Modi government (from $43.25 billion in 2013-14 to $35.60
+              billion in 2019-20), while accompanied by an increase in imports
+              (from $15.53 billion to $21.86 billion).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="right-sidebar">
+        <div class="news-sources">
+          <h3>News Companies and Sources</h3>
+          <ul>
+            <li>The Hindu</li>
+            <li>The Indian Express</li>
+            <li>Article 14</li>
+            <li>BBC</li>
+            <li>Bloomberg</li>
+          </ul>
+        </div>
+        <div class="crop-prices">
+          <h3>Crop Prices(per Kg)</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Crop Name</th>
+                <th>Tamil Nadu</th>
+                <th>Kerala</th>
+                <th>Andhra Pradesh</th>
+                <th>Telangana</th>
+                <th>Karnataka</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tomato</td>
+                <td>100</td>
+                <td>110</td>
+                <td>95</td>
+                <td>105</td>
+                <td>98</td>
+              </tr>
+              <tr>
+                <td>Potato</td>
+                <td>120</td>
+                <td>115</td>
+                <td>125</td>
+                <td>130</td>
+                <td>118</td>
+              </tr>
+              <tr>
+                <td>Eggplant</td>
+                <td>90</td>
+                <td>85</td>
+                <td>95</td>
+                <td>88</td>
+                <td>92</td>
+              </tr>
+              <tr>
+                <td>Cabbage</td>
+                <td>80</td>
+                <td>82</td>
+                <td>78</td>
+                <td>85</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>Raddish</td>
+                <td>150</td>
+                <td>145</td>
+                <td>155</td>
+                <td>148</td>
+                <td>160</td>
+              </tr>
+              <tr>
+                <td>Maize</td>
+                <td>70</td>
+                <td>75</td>
+                <td>68</td>
+                <td>72</td>
+                <td>65</td>
+              </tr>
+              <tr>
+                <td>Wheat</td>
+                <td>115</td>
+                <td>120</td>
+                <td>110</td>
+                <td>118</td>
+                <td>112</td>
+              </tr>
+              <tr>
+                <td>Parley</td>
+                <td>130</td>
+                <td>135</td>
+                <td>125</td>
+                <td>128</td>
+                <td>132</td>
+              </tr>
+              <tr>
+                <td>Corn</td>
+                <td>105</td>
+                <td>98</td>
+                <td>100</td>
+                <td>108</td>
+                <td>102</td>
+              </tr>
+              <tr>
+                <td>Sugarcane</td>
+                <td>88</td>
+                <td>92</td>
+                <td>85</td>
+                <td>90</td>
+                <td>86</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+transformers
+langchain
+langchain-community
+peft
+accelerate
+torch
+pandas
+datasets
+ultralytics
+bitsandbytes

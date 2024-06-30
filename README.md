@@ -69,21 +69,22 @@ We’re thrilled to introduce AgriHub, your new go-to platform designed to make 
 - **STAM/agricore**
 - **parthrautV/gemma_agri_dataset**
 - We have used the BE books for agriculture to create a vector store, including titles such as:
-  1. Book Title 1
-  2. Book Title 2
-  3. Book Title 3
-  4. Book Title 4
-  5. Book Title 5
-  6. Book Title 6
+  1. [The First Book of Farming](https://www.gutenberg.org/cache/epub/16900/pg16900-images.html)
+  2. [Basic Agriculture Student Handbook](https://www.infobooks.org/pdfview/4314-basic-agriculture-student-handbook-shiksha-kendra/)
+  3. [Dictionary of Agriculture](http://dspace.vnbrims.org:13000/jspui/bitstream/123456789/4578/1/Dictionary%20of%20Agriculture.pdf)
+  4. [An Introduction to Agriculture and Agronomy](https://www.infobooks.org/pdfview/4326-an-introduction-to-agriculture-and-agronomy-various-authors/)
+  5. [Farmers Handbook on Basic Agriculture](https://www.manage.gov.in/publications/farmerbook.pdf)
+  6. [Crop Production Manual](https://openknowledge.fao.org/server/api/core/bitstreams/aac462ae-90d2-422c-b9e6-3e5336b18b52/content)
   7. Book Title 7
-  8. Book Title 8
-  9. Book Title 9
-  10. Book Title 10
+  8. [Farm Management Guide](https://www.infobooks.org/pdfview/4321-farm-management-guide-sayed-mohammad-naim-khalid-and-shukrullah-sherzad/)
+  9. [Training Manual for Organic Agriculture](https://www.fao.org/fileadmin/templates/nr/sustainability_pathways/docs/Compilation_techniques_organic_agriculture_rev.pdf)
+  10. [Farming Systems and Sustainable Agriculture](http://jnkvv.org/PDF/0504202013425134200822.pdf)
 - For YOLO, we have utilized various datasets, including:
   1. Dataset 1
   2. Dataset 2
   3. Dataset 3
   4. Dataset 4
+
 
   
 ## Benchmark Comparison

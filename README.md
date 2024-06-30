@@ -11,7 +11,9 @@ We’re thrilled to introduce AgriHub, your new go-to platform designed to make 
 ![AgriHub Main Page](path/to/main_page_image.png)
 
 ## Installation and Running
-(Instructions to be added by the creator)
+```bash
+git clone https://github.com/Siddharth-magesh/Agri-Hub.git
+```
 
 ## Models and Datasets
 - **QuickFarm**: Uses an LLM fine-tuned on farming data for personalized recommendations.

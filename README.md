@@ -94,5 +94,3 @@ All features can be accessed via phone calls. Using voice recognition, users can
 - Make the dashboard dynamic.
 - Create flowcharts for the entire working procedure.
 - Provide detailed documentation.
-
-![To-Do List](path/to/todo_list_image.png)

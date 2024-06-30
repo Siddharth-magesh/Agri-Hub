@@ -8,7 +8,7 @@ We’re thrilled to introduce AgriHub, your new go-to platform designed to make 
 - [Creator 2 Name], Designation
 - [Creator 3 Name], Designation
 
-![AgriHub Main Page](path/to/main_page_image.png)
+![AgriHub Main Page]([path/to/main_page_image.png](https://github.com/Siddharth-magesh/Agri-Hub/blob/main/static/images/Black%20Gram.jpg))
 
 ## Installation and Running
 ## Installation and Running

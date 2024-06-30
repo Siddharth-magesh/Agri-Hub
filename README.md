@@ -1,3 +1,4 @@
+```markdown
 # AgriHub
 
 ## Introduction
@@ -8,9 +9,8 @@ We’re thrilled to introduce AgriHub, your new go-to platform designed to make 
 - [Creator 2 Name], Designation
 - [Creator 3 Name], Designation
 
-![AgriHub Main Page][path/to/homepage_image.png]
+![AgriHub Main Page](path/to/homepage_image.png)
 
-## Installation and Running
 ## Installation and Running
 
 1. Clone the repository from GitHub:
@@ -35,13 +35,13 @@ We’re thrilled to introduce AgriHub, your new go-to platform designed to make 
     ```bash
     pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
     ```
-    This installs PyTorch, torchvision, and torchaudio with CUDA 11.8 support for GPU acceleration. Make sure your device supports the right version , for further information visit the official PyTorch Docs
+    This installs PyTorch, torchvision, and torchaudio with CUDA 11.8 support for GPU acceleration. Make sure your device supports the right version; for further information, visit the official PyTorch Docs.
 
 5. Navigate to the project directory:
     ```bash
     cd Agri-Hub
     ```
-    This command changes the current directory to the Agri-Hub project folder. Navigate to the cloned dir.
+    This command changes the current directory to the Agri-Hub project folder. Navigate to the cloned directory.
 
 6. Install the required Python packages:
     ```bash
@@ -56,7 +56,6 @@ We’re thrilled to introduce AgriHub, your new go-to platform designed to make 
     This command starts the AgriHub application.
 
 8. [Dailer Run Will be Updated soon]
-
 
 ## Models and Datasets
 - **QuickFarm**: Uses an LLM fine-tuned on farming data for personalized recommendations.
@@ -139,3 +138,6 @@ All features can be accessed via phone calls. Using voice recognition, users can
 - Make the dashboard dynamic.
 - Create flowcharts for the entire working procedure.
 - Provide detailed documentation.
+
+© 2024 AgriHub. All rights reserved.
+```

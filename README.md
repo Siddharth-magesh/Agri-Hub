@@ -4,9 +4,10 @@
 We’re thrilled to introduce AgriHub, your new go-to platform designed to make farming easier and more connected than ever before. AgriHub is all about bringing farmers and buyers together in one place, helping you manage your farm, connect with others, and find the resources you need to succeed.
 
 ## Creators
-- [Creator 1 Name], Designation
-- [Creator 2 Name], Designation
-- [Creator 3 Name], Designation
+- Siddharth M
+- Pranesh Kumar
+- Arjun VL
+- Waatson
 
 ![AgriHub Main Page](path/to/homepage_image.png)
 
@@ -139,4 +140,3 @@ All features can be accessed via phone calls. Using voice recognition, users can
 - Provide detailed documentation.
 
 © 2024 AgriHub. All rights reserved.
-```

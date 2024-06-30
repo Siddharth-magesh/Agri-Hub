@@ -35,13 +35,13 @@ We’re thrilled to introduce AgriHub, your new go-to platform designed to make 
     ```bash
     pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
     ```
-    This installs PyTorch, torchvision, and torchaudio with CUDA 11.8 support for GPU acceleration.
+    This installs PyTorch, torchvision, and torchaudio with CUDA 11.8 support for GPU acceleration. Make sure your device supports the right version , for further information visit the official PyTorch Docs
 
 5. Navigate to the project directory:
     ```bash
     cd Agri-Hub
     ```
-    This command changes the current directory to the Agri-Hub project folder.
+    This command changes the current directory to the Agri-Hub project folder. Navigate to the cloned dir.
 
 6. Install the required Python packages:
     ```bash
@@ -54,6 +54,8 @@ We’re thrilled to introduce AgriHub, your new go-to platform designed to make 
     python main.py
     ```
     This command starts the AgriHub application.
+
+8. [Dailer Run Will be Updated soon]
 
 
 ## Models and Datasets

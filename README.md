@@ -146,22 +146,40 @@ All features can be accessed via phone calls. Using voice recognition, users can
 
 
 ## To-Do List
-### Backend
-- Implement and optimize SQL database queries.
-- Draw and upload the database schema.
-- Establish extended and foreign key relationships in the database.
-- Integrate Computer Vision (CV) and YOLO models.
-- Retrain and integrate large language models (LLMs).
-- Ensure the database LLM retrieves values from SQL and prints them out. Fine-tune the LLM.
 
-### Frontend
-- Create a dynamic login page for farmers.
-- Develop a dynamic shopping page, news page, and communication page.
-- Improve the aesthetic design of the financial page.
-- Enhance the website's overall user experience.
-- Add Customer Experience Research (CER) works.
-- Make the dashboard dynamic.
-- Create flowcharts for the entire working procedure.
-- Provide detailed documentation.
+1. **SQL Database:**
+   - Implement and optimize SQL database queries.
+   - Draw and upload the database schema.
+   - Establish extended and foreign key relationships in the database.
+
+2. **Model Integration and Training:**
+   - Integrate Computer Vision (CV) and YOLO models.
+   - Retrain and integrate large language models (LLMs).
+   - Train LLMs on more agriculture-related datasets.
+   - Use various LLMs to enhance model performance.
+   - Ensure the LLM retrieves values from the SQL database and prints them out.
+   - Fine-tune the LLM for optimal performance.
+
+3. **Frontend Development:**
+   - Fix the login page for farmers.
+   - Develop dynamic shopping, news, and communication pages.
+   - Improve the aesthetic design of the financial page.
+   - Enhance the website's overall user experience.
+   - Add an "About Us" page.
+   - Make the dashboard dynamic.
+
+4. **Documentation and Visualization:**
+   - Create flowcharts for the entire working procedure.
+   - Provide detailed documentation.
+
+5. **Additional Enhancements:**
+   - Edit and enhance all web pages, adding extra CSS, a logo, copyright information, and a navigation bar.
+   - Implement dynamic features across the website.
+   - Increase the vector store capacity and add additional data in farmers' backend data structures.
+   - Integrate all main web pages into the vector store and create a generalized vector store.
+   - Implement a mobile application and create a separate GUI.
+   - Create a separate run command and update the README with these details.
+   - Update the README files with the latest information.
+   - Benchmark the LLMs and include the values in the README.
 
 © 2024 AgriHub. All rights reserved.

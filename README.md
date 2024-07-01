@@ -80,9 +80,9 @@ We’re thrilled to introduce AgriHub, your new go-to platform designed to make 
   9. [Training Manual for Organic Agriculture](https://www.fao.org/fileadmin/templates/nr/sustainability_pathways/docs/Compilation_techniques_organic_agriculture_rev.pdf)
   10. [Farming Systems and Sustainable Agriculture](http://jnkvv.org/PDF/0504202013425134200822.pdf)
 - For YOLO, we have utilized various datasets, including:
-  1. Dataset 1
-  2. Dataset 2
-  3. Dataset 3
+  1. [Leaf Disease Detection](https://universe.roboflow.com/search?q=leaf%20disease)
+  2. [Weed Detection](https://universe.roboflow.com/augmented-startups/weeds-nxe1w/dataset/3)
+  3. [Apple Counting](https://universe.roboflow.com/university-e8im3/apple-detection-vxa0k/dataset/2)
   4. Dataset 4
 
 

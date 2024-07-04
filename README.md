@@ -12,50 +12,52 @@ We’re thrilled to introduce AgriHub, your new go-to platform designed to make 
 ![AgriHub Main Page](https://github.com/Siddharth-magesh/Agri-Hub/blob/main/static/images/Home%20Page.png)
 
 ## Installation and Running
-
-1. Clone the repository from GitHub:
+1. Download anaconda in your local system from the given link (https://www.anaconda.com/download)
+    if you have already downloaded it, move to the next step.
+   
+2. Clone the repository from GitHub:
     ```bash
     git clone https://github.com/Siddharth-magesh/Agri-Hub.git
     ```
     This command creates a local copy of the AgriHub project on your machine.
 
-2. Create a new conda environment with Python 3.10:
+3. Create a new conda environment with Python 3.10:
     ```bash
     conda create project python=3.10
     ```
     This sets up a new environment named `project` with Python version 3.10, ensuring dependencies are isolated.
 
-3. Activate the newly created environment:
+4. Activate the newly created environment:
     ```bash
     conda activate project
     ```
     This command activates the `project` environment so that subsequent commands run within this context.
 
-4. Install PyTorch and related libraries:
+5. Install PyTorch and related libraries:
     ```bash
     pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
     ```
     This installs PyTorch, torchvision, and torchaudio with CUDA 11.8 support for GPU acceleration. Make sure your device supports the right version; for further information, visit the official PyTorch Docs.
 
-5. Navigate to the project directory:
+6. Navigate to the project directory:
     ```bash
     cd Agri-Hub
     ```
     This command changes the current directory to the Agri-Hub project folder. Navigate to the cloned directory.
 
-6. Install the required Python packages:
+7. Install the required Python packages:
     ```bash
     pip install -r requirements.txt
     ```
     This installs all the necessary libraries and dependencies listed in the `requirements.txt` file.
 
-7. Run the main application:
+8. Run the main application:
     ```bash
     python main.py
     ```
     This command starts the AgriHub application.
 
-8. [Dailer Run Will be Updated soon]
+9. [Dailer Run Will be Updated soon]
 
 ## Models and Datasets
 

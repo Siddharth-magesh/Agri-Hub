@@ -1,0 +1,13 @@
+train: P:\SmartHacks\todo\yolo\appledetection\train\images
+val: P:\SmartHacks\todo\yolo\appledetection\valid\images
+test: P:\SmartHacks\todo\yolo\appledetection\test\images
+
+nc: 1
+names: ['Apple']
+
+roboflow:
+  workspace: university-e8im3
+  project: apple-detection-vxa0k
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/university-e8im3/apple-detection-vxa0k/dataset/2

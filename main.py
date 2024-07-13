@@ -1,7 +1,17 @@
 from flask import Flask, render_template, request , jsonify
 from utils.actions import login_validation_check , selling_injection_in_sql , generate_response , signup_sql_injection ,compute_plan_agri
+import os
+
+from yolo.appledetection.appletrack import apple_count
+from yolo.plantdiseasedetection.leaftraining import leaf_disease_detection
+from yolo.weeddetection.weedtraining import weed_detection
 
 app = Flask(__name__)
+UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'uploads')  # Path to uploads folder relative to app.py
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# Ensure the upload folder exists
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 @app.route("/")
 def hello_world():
@@ -154,6 +164,43 @@ def sellingprocess():
 @app.route("/cvpage")
 def cvpage():
     return render_template("cv.html")
+
+
+@app.route('/leafbase', methods=['GET', 'POST'])
+def leafbase():
+    if request.method == 'POST':
+        file = request.files['image']
+        if file:
+            filepath = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+            file.save(filepath)
+            # Call the leaf model function here
+            result = leaf_disease_detection(filepath)
+            return render_template('leafresult.html', result=result)
+    return render_template('upload_form.html', task='leaf')
+
+@app.route('/weedbase', methods=['GET', 'POST'])
+def weedbase():
+    if request.method == 'POST':
+        file = request.files['image']
+        if file:
+            filepath = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+            file.save(filepath)
+            # Call the leaf model function here
+            result = weed_detection(filepath)
+            return render_template('weedresult.html', result=result)
+    return render_template('upload_form.html', task='weed')
+
+@app.route('/countbase', methods=['GET', 'POST'])
+def countbase():
+    if request.method == 'POST':
+        file = request.files['image']
+        if file:
+            filepath = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+            file.save(filepath)
+            # Call the leaf model function here
+            result = apple_count(filepath)
+            return render_template('countresult.html', result=result)
+    return render_template('upload_form.html', task='count')
 
 @app.route('/chatprocess', methods=['POST'])
 def chatprocess():

@@ -1,0 +1,22 @@
+train: P:\SmartHacks\todo\yolo\weeddetection\train\images
+val: P:\SmartHacks\todo\yolo\weeddetection\valid\images
+
+nc: 15
+names:
+  [
+    "Carpetweeds",
+    "Crabgrass",
+    "Eclipta",
+    "Goosegrass",
+    "Morningglory",
+    "Nutsedge",
+    "Palmeramaranth",
+    "Pricklysida",
+    "Purslane",
+    "Ragweed",
+    "Sicklepod",
+    "Spottedspurge",
+    "Spurredanoda",
+    "Swinecress",
+    "Waterhemp",
+  ]

@@ -1,5 +1,0 @@
-train: D:\plant disease detection\train\images
-val: D:\plant disease detection\valid\images
-
-nc: 6
-names: ["0", "1", "2", "3", "4", "5"]

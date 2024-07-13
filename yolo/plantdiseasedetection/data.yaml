@@ -1,0 +1,5 @@
+train: P:\SmartHacks\todo\yolo\plant disease detection\train\images
+val: P:\SmartHacks\todo\yolo\plant disease detection\valid\images
+
+nc: 6
+names: ['hawar_daun', 'virus_kuning_keriting', 'hangus_daun','defisiensi_kalsium', 'bercak_daun', 'yellow_vein_mosaic_virus']

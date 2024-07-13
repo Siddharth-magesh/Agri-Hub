@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Counting Result</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .box {
+            width: 600px;
+            height: 200px;
+            background-color: #ffffff;
+            border: 1px solid #cccccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding: 250px;
+            box-sizing: border-box;
+        }
+
+        .label-top-center {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .label-left-center {
+            position: absolute;
+            top: 25%;
+            left: 10px;
+            transform: translateY(-50%);
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <label class="label-top-center">Result</label>
+        <label class="label-left-center">the number of apples given in the video or image are{{result}}</label>
+    </div>
+</body>
+</html>

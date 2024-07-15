@@ -165,7 +165,6 @@ def sellingprocess():
 def cvpage():
     return render_template("cv.html")
 
-
 @app.route('/leafbase', methods=['GET', 'POST'])
 def leafbase():
     if request.method == 'POST':

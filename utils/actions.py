@@ -10,19 +10,25 @@ from langchain.chains import LLMChain
 from transformers import AutoModelForCausalLM , AutoTokenizer , pipeline , BitsAndBytesConfig
 import torch
 import time
+from ultralytics import YOLO
+import cv2
+import matplotlib.pyplot as plt
 
 def login_validation_check(number , password, type):
     conn = mysql.connector.connect(
         host='localhost',  # e.g., 'localhost'
         user='root',  # e.g., 'root'
-        password='Siddha@2234',  # e.g., 'password'
+        password='2005',  # e.g., 'password'
         database='agribot'  # e.g., 'mydatabase'
     )
     cursor = conn.cursor()
     if type=="farmer":
+        print("test here")
         query = "SELECT password FROM farmers WHERE mobile_number = %s"
+        print("exe done")
         cursor.execute(query, (number,))
         result = cursor.fetchone()
+        print(result)
         if result[0]==password:
             return True
         else:
@@ -295,3 +301,153 @@ def compute_plan_agri(landMeasurements,budget,machinery,labours,soilType,irrigat
     llm_chain = LLMChain(prompt=prompt, llm=llm)
     x=llm_chain.run(landMeasurements=landMeasurements,budget=budget,machinery=machinery,labours=labours,soilType=soilType,irrigationMethod=irrigationMethod,storageFacilities=storageFacilities)
     return x
+
+def apple_count(video_path):
+
+    # Load your trained YOLOv8 model
+    # change to local directory
+    model = YOLO(r'P:\SmartHacks\apple\runs\detect\train\weights\best.pt')
+
+    class_name=['Apple']
+    video_path_out = '{}_out.mp4'.format(video_path)
+    cap = cv2.VideoCapture(video_path)
+    ret, frame = cap.read()
+    H, W, _ = frame.shape
+    out = cv2.VideoWriter(video_path_out, cv2.VideoWriter_fourcc(*'MP4V'), int(cap.get(cv2.CAP_PROP_FPS)), (W, H))
+
+    threshold = 0.5
+
+    # Variable to keep track of the maximum number of apples detected in any frame
+    max_apple_count = 0
+
+    while ret:
+        # Perform inference on the frame
+        results = model(frame)[0]
+
+        # Initialize apple counter for the current frame
+        apple_count = 0
+
+        for result in results.boxes.data.tolist():
+            x1, y1, x2, y2, score, class_id = result
+
+            if score > threshold:
+                # Count apples (assuming class ID for apple is 0)
+                if int(class_id) == 0:  # Adjust this based on your class labels
+                    apple_count += 1
+
+                # Draw bounding box
+                cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 4)
+                cv2.putText(frame, results.names[int(class_id)].upper(), (int(x1), int(y1 - 10)),
+                            cv2.FONT_HERSHEY_SIMPLEX, 1.3, (0, 255, 0), 3, cv2.LINE_AA)
+
+        # Update the maximum apple count if the current frame has more apples
+        if apple_count > max_apple_count:
+            max_apple_count = apple_count
+
+        # Display apple count on the frame (optional)
+        cv2.putText(frame, f'Apples: {apple_count}', (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 3, cv2.LINE_AA)
+
+        # Write the frame with bounding boxes and apple count
+        out.write(frame)
+        ret, frame = cap.read()
+    cap.release()
+    out.release()
+    cv2.destroyAllWindows()
+    return(max_apple_count)
+
+# Perform inference
+def leaf_disease_detection(image_path):
+    #Define the class names
+    class_names = [
+        'Hawar_Daun', 'Virus_Kuning_Keriting', 'Hangus_Daun','Defisiensi_Kalsium', 'Bercak_Daun', 'Yellow_Vein_Mosaic_Virus'
+    ]
+
+    # Load the YOLO model
+    model = YOLO(r"P:\SmartHacks\todo\yolo\plantdiseasedetection\runs\detect\train3\weights\best.pt")
+    # Load image
+    img = cv2.imread(image_path)
+    # Perform inference
+    results = model(img)
+    
+    # Check the structure of the results
+    if not results:
+        print("No results found.")
+        return
+    
+    # Extract bounding boxes, class ids, and confidence scores
+    for result in results:
+        boxes = result.boxes.xyxy.cpu().numpy()
+        class_ids = result.boxes.cls.cpu().numpy().astype(int)
+        confidences = result.boxes.conf.cpu().numpy()
+
+        # Draw bounding boxes and labels on the image
+        for box, class_id, confidence in zip(boxes, class_ids, confidences):
+            label = f"{class_names[class_id]} {confidence:.2f}"
+            x1, y1, x2, y2 = map(int, box)
+            cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
+            cv2.putText(img, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+            
+
+    # Convert BGR image to RGB for displaying with matplotlib
+    img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    
+    leaf_predicted=class_names[class_id]
+    return(leaf_predicted)
+
+# Replace 'path/to/your/image.jpg' with the path to your image
+
+# Perform inference
+
+def weed_detection(image_path):
+    # Define the class names
+    class_names = [
+        "Carpetweeds",
+        "Crabgrass",
+        "Eclipta",
+        "Goosegrass",
+        "Morningglory",
+        "Nutsedge",
+        "Palmeramaranth",
+        "Pricklysida",
+        "Purslane",
+        "Ragweed",
+        "Sicklepod",
+        "Spottedspurge",
+        "Spurredanoda",
+        "Swinecress",
+        "Waterhemp"
+    ]
+
+    # Load the YOLO model
+    model = YOLO(r"P:\SmartHacks\todo\yolo\weeddetection\runs\detect\train\weights\last.pt")
+
+    # Perform inference
+    # Load image
+    img = cv2.imread(image_path)
+    # Perform inference
+    results = model(img)
+    
+    # Check the structure of the results
+    if not results:
+        print("No results found.")
+        return
+    
+    # Extract bounding boxes, class ids, and confidence scores
+    for result in results:
+        boxes = result.boxes.xyxy.cpu().numpy()
+        class_ids = result.boxes.cls.cpu().numpy().astype(int)
+        confidences = result.boxes.conf.cpu().numpy()
+
+        # Draw bounding boxes and labels on the image
+        for box, class_id, confidence in zip(boxes, class_ids, confidences):
+            label = f"{class_names[class_id]} {confidence:.2f}"
+            x1, y1, x2, y2 = map(int, box)
+            cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
+            cv2.putText(img, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+            
+
+    # Convert BGR image to RGB for displaying with matplotlib
+    img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    
+    weed_predicted=class_names[class_id]
+    return(weed_predicted)

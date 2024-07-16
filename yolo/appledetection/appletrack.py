@@ -1,54 +1,8 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[2]:
-
-
-
-
-# In[3]:
-
-
-
-
-
-# In[5]:
-
-
-
-# In[6]:
-
-
-
-
-# In[7]:
-
-
-
-
-
-# In[8]:
-
-
-
-
-
-# In[2]:
-
-
-
-
-# In[9]:
-
-
 from ultralytics import YOLO
 import cv2
 
 # Load your trained YOLOv8 model
 model = YOLO(r'P:\SmartHacks\apple\runs\detect\train\weights\best.pt')
-
-
-
 
 class_name=['Apple']
 

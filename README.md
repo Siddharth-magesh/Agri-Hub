@@ -155,7 +155,6 @@ All features can be accessed via phone calls. Using voice recognition, users can
    - Establish extended and foreign key relationships in the database.
 
 2. **Model Integration and Training:**
-   - Integrate Computer Vision (CV) and YOLO models.
    - Retrain and integrate large language models (LLMs).
    - Train LLMs on more agriculture-related datasets.
    - Use various LLMs to enhance model performance.
@@ -169,6 +168,7 @@ All features can be accessed via phone calls. Using voice recognition, users can
    - Enhance the website's overall user experience.
    - Add an "About Us" page.
    - Make the dashboard dynamic.
+   - Add Css to the CV pages and rewrite the main cv page
 
 4. **Documentation and Visualization:**
    - Create flowcharts for the entire working procedure.

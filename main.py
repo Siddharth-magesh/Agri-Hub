@@ -1,10 +1,6 @@
 from flask import Flask, render_template, request , jsonify
-from utils.actions import login_validation_check , selling_injection_in_sql , generate_response , signup_sql_injection ,compute_plan_agri
+from utils.actions import login_validation_check , selling_injection_in_sql , generate_response , signup_sql_injection ,compute_plan_agri , apple_count , weed_detection , leaf_disease_detection
 import os
-
-from yolo.appledetection.appletrack import apple_count
-from yolo.plantdiseasedetection.leaftraining import leaf_disease_detection
-from yolo.weeddetection.weedtraining import weed_detection
 
 app = Flask(__name__)
 UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'uploads')  # Path to uploads folder relative to app.py
@@ -29,6 +25,7 @@ def buyerlogin():
 def farmerloginauth():
     number = request.form.get("number")
     password = request.form.get("password")
+    print(password)
     validation_result = login_validation_check(number, password,"farmer")
     if validation_result:
         return render_template("homepage.html")

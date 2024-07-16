@@ -25,7 +25,6 @@ def buyerlogin():
 def farmerloginauth():
     number = request.form.get("number")
     password = request.form.get("password")
-    print(password)
     validation_result = login_validation_check(number, password,"farmer")
     if validation_result:
         return render_template("homepage.html")

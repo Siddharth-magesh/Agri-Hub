@@ -18,17 +18,15 @@ def login_validation_check(number , password, type):
     conn = mysql.connector.connect(
         host='localhost',  # e.g., 'localhost'
         user='root',  # e.g., 'root'
-        password='2005',  # e.g., 'password'
+        password='',  # e.g., 'password'
         database='agribot'  # e.g., 'mydatabase'
     )
     cursor = conn.cursor()
     if type=="farmer":
         print("test here")
         query = "SELECT password FROM farmers WHERE mobile_number = %s"
-        print("exe done")
         cursor.execute(query, (number,))
         result = cursor.fetchone()
-        print(result)
         if result[0]==password:
             return True
         else:

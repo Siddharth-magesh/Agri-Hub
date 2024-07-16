@@ -306,7 +306,7 @@ def apple_count(video_path):
 
     # Load your trained YOLOv8 model
     # change to local directory
-    model = YOLO(r'P:\SmartHacks\apple\runs\detect\train\weights\best.pt')
+    model = YOLO(r'yolo\appledetection\best.pt')
 
     class_name=['Apple']
     video_path_out = '{}_out.mp4'.format(video_path)
@@ -363,7 +363,7 @@ def leaf_disease_detection(image_path):
     ]
 
     # Load the YOLO model
-    model = YOLO(r"P:\SmartHacks\todo\yolo\plantdiseasedetection\runs\detect\train3\weights\best.pt")
+    model = YOLO(r"yolo\plantdiseasedetection\best.pt")
     # Load image
     img = cv2.imread(image_path)
     # Perform inference
@@ -419,7 +419,7 @@ def weed_detection(image_path):
     ]
 
     # Load the YOLO model
-    model = YOLO(r"P:\SmartHacks\todo\yolo\weeddetection\runs\detect\train\weights\last.pt")
+    model = YOLO(r"yolo\weeddetection\last.pt")
 
     # Perform inference
     # Load image
